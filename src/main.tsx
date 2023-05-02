@@ -7,7 +7,7 @@ import { Replay } from '@sentry/browser';
 import * as Sentry from '@sentry/react';
 import { BrowserTracing } from '@sentry/tracing';
 
-import { MOCK_API } from './config/env';
+import { MOCK_API, OPEN_AI_API_URL } from './config/env';
 import { generateSentryConfig } from './config/sentry';
 import './index.css';
 import buildDatabase, { mockContext, mockMembers } from './mocks/db';
@@ -26,7 +26,7 @@ Sentry.init({
 /* istanbul ignore next */
 if (MOCK_API) {
   mockApi({
-    externalUrls: [],
+    externalUrls: [OPEN_AI_API_URL],
     appContext: window.Cypress ? window.appContext : mockContext,
     database: window.Cypress
       ? window.database

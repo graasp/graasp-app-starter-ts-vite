@@ -4,7 +4,8 @@ import { AppData } from '@graasp/apps-query-client';
 
 import { List } from 'immutable';
 
-import { MUTATION_KEYS, hooks, useMutation } from '../../config/queryClient';
+import { MUTATION_KEYS, hooks, useMutation } from '@/config/queryClient';
+
 import Loader from '../common/Loader';
 
 type PostAppDataType = {
