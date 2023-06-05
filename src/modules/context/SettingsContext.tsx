@@ -2,19 +2,46 @@ import { FC, ReactElement, createContext, useContext } from 'react';
 
 import { AppSetting } from '@graasp/apps-query-client';
 
-import { MUTATION_KEYS, hooks, useMutation } from '../../config/queryClient';
+import {
+  APP_MODE_SETTINGS_NAME,
+  CHATBOT_PROMPT_SETTINGS_NAME,
+  GENERAL_SETTINGS_NAME,
+} from '@/config/appSettingsTypes';
+import { MUTATION_KEYS, hooks, useMutation } from '@/config/queryClient';
+import {
+  DEFAULT_APP_MODE_SETTINGS,
+  DEFAULT_CHATBOT_PROMPT_SETTINGS,
+  DEFAULT_GENERAL_SETTINGS,
+} from '@/config/settings';
+import {
+  AppModeSettings,
+  ChatbotPromptAppSettings,
+  ChatbotPromptSettings,
+  ChatbotPromptSettingsKeys,
+  GeneralSettings,
+} from '@/interfaces/settings';
+
 import Loader from '../common/Loader';
 
 // mapping between Setting names and their data type
-// eslint-disable-next-line @typescript-eslint/ban-types
-type AllSettingsType = {};
+interface AllSettingsType {
+  [GENERAL_SETTINGS_NAME]?: GeneralSettings;
+  [APP_MODE_SETTINGS_NAME]?: AppModeSettings;
+  [CHATBOT_PROMPT_SETTINGS_NAME]?: ChatbotPromptSettings;
+}
 
 // default values for the data property of settings by name
-const defaultSettingsValues: AllSettingsType = {};
+const defaultSettingsValues: AllSettingsType = {
+  [GENERAL_SETTINGS_NAME]: DEFAULT_GENERAL_SETTINGS,
+  [APP_MODE_SETTINGS_NAME]: DEFAULT_APP_MODE_SETTINGS,
+  [CHATBOT_PROMPT_SETTINGS_NAME]: DEFAULT_CHATBOT_PROMPT_SETTINGS,
+};
 
 // list of the settings names
 const ALL_SETTING_NAMES = [
-  // name of your settings
+  GENERAL_SETTINGS_NAME,
+  APP_MODE_SETTINGS_NAME,
+  CHATBOT_PROMPT_SETTINGS_NAME,
 ] as const;
 
 // automatically generated types
@@ -22,6 +49,7 @@ type AllSettingsNameType = (typeof ALL_SETTING_NAMES)[number];
 type AllSettingsDataType = AllSettingsType[keyof AllSettingsType];
 
 export type SettingsContextType = AllSettingsType & {
+  chatbotPrompt: ChatbotPromptAppSettings;
   saveSettings: (
     name: AllSettingsNameType,
     newValue: AllSettingsDataType,
@@ -30,6 +58,12 @@ export type SettingsContextType = AllSettingsType & {
 
 const defaultContextValue = {
   ...defaultSettingsValues,
+  chatbotPrompt: {
+    data: {
+      [ChatbotPromptSettingsKeys.InitialPrompt]: [{}],
+      [ChatbotPromptSettingsKeys.ChatbotPrompt]: '',
+    },
+  } as ChatbotPromptAppSettings,
   saveSettings: () => null,
 };
 
@@ -92,8 +126,16 @@ export const SettingsProvider: FC<Prop> = ({ children }) => {
         },
         {},
       );
+
+      const chatbotPrompt = (appSettingsList.find(
+        (s) => s.name === CHATBOT_PROMPT_SETTINGS_NAME,
+      ) as ChatbotPromptAppSettings) || {
+        data: DEFAULT_CHATBOT_PROMPT_SETTINGS,
+      };
+
       return {
         ...allSettings,
+        chatbotPrompt,
         saveSettings,
       };
     }
