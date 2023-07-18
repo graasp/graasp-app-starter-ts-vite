@@ -3363,7 +3363,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graasp/apps-query-client@npm:^2.0.1":
+"@graasp/apps-query-client@npm:2.0.1":
   version: 2.0.1
   resolution: "@graasp/apps-query-client@npm:2.0.1"
   dependencies:
@@ -7732,7 +7732,7 @@ __metadata:
     "@cypress/code-coverage": 3.11.0
     "@emotion/react": 11.11.1
     "@emotion/styled": 11.11.0
-    "@graasp/apps-query-client": ^2.0.1
+    "@graasp/apps-query-client": 2.0.1
     "@graasp/sdk": 1.1.2
     "@graasp/ui": 3.2.4
     "@mui/icons-material": 5.14.0

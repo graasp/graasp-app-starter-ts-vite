@@ -1,5 +1,6 @@
 /// <reference types="../../src/window" />
-import { Database, LocalContext, Member } from '@graasp/apps-query-client';
+import { Database, LocalContext } from '@graasp/apps-query-client';
+import { Member } from '@graasp/sdk';
 
 import { CURRENT_MEMBER, MEMBERS } from '../fixtures/members';
 import { MOCK_SERVER_ITEM } from '../fixtures/mockItem';
@@ -37,6 +38,7 @@ Cypress.Commands.add(
         appSettings: [],
         members: Object.values(MEMBERS),
         ...database,
+        items: [MOCK_SERVER_ITEM],
       };
       // eslint-disable-next-line no-param-reassign
       win.appContext = {
