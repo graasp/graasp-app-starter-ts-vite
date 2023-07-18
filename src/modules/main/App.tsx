@@ -24,13 +24,13 @@ const App = (): JSX.Element => {
 
   const renderContent = (): JSX.Element => {
     switch (context.context) {
-      case Context.BUILDER:
+      case Context.Builder:
         return <BuilderView />;
 
-      case Context.ANALYTICS:
+      case Context.Analytics:
         return <AnalyticsView />;
 
-      case Context.PLAYER:
+      case Context.Player:
       default:
         return <PlayerView />;
     }

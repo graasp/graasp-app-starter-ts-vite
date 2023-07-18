@@ -1,6 +1,6 @@
 import { FC, ReactElement, createContext, useContext } from 'react';
 
-import { AppSetting } from '@graasp/apps-query-client';
+import { AppSetting } from '@graasp/sdk';
 
 import { MUTATION_KEYS, hooks, useMutation } from '../../config/queryClient';
 import Loader from '../common/Loader';

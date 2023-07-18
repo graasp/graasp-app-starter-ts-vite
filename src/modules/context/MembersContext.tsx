@@ -1,6 +1,6 @@
 import React, { FC, ReactElement, createContext, useMemo } from 'react';
 
-import { Member } from '@graasp/apps-query-client';
+import { Member } from '@graasp/sdk';
 
 import { List } from 'immutable';
 
