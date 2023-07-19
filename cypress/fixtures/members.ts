@@ -7,8 +7,8 @@ export const MEMBERS: { [key: string]: Member } = {
     type: MemberType.Individual,
     email: 'bob@gmail.com',
     extra: {},
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    createdAt: new Date(),
+    updatedAt: new Date(),
   },
   BOB: {
     id: '1f0a2774-a965-4b97-afb4-bccc3796e060',
@@ -16,8 +16,8 @@ export const MEMBERS: { [key: string]: Member } = {
     type: MemberType.Individual,
     email: 'bob@gmail.com',
     extra: {},
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    createdAt: new Date(),
+    updatedAt: new Date(),
   },
 };
 

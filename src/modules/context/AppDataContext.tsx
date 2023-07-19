@@ -1,6 +1,7 @@
 import React, { createContext, useMemo } from 'react';
 
-import { AppData } from '@graasp/apps-query-client';
+import { AppData } from '@graasp/sdk';
+import { AppDataRecord } from '@graasp/sdk/frontend';
 
 import { List } from 'immutable';
 
@@ -27,7 +28,7 @@ export type AppDataContextType = {
   postAppDataAsync: (payload: PostAppDataType) => Promise<AppData> | undefined;
   patchAppData: (payload: PatchAppDataType) => void;
   deleteAppData: (payload: DeleteAppDataType) => void;
-  appData: List<AppData>;
+  appData: List<AppDataRecord>;
 };
 
 const defaultContextValue = {
@@ -69,7 +70,7 @@ export const AppDataProvider = ({ children }: Props): JSX.Element => {
       postAppData,
       postAppDataAsync,
       deleteAppData,
-      appData: appData.data || List<AppData>([]),
+      appData: appData.data || List<AppDataRecord>([]),
     }),
     [patchAppData, postAppData, postAppDataAsync, deleteAppData, appData.data],
   );
