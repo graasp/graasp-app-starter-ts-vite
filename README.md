@@ -26,7 +26,7 @@ First create a copy of this repo using either the `Use this template` button, or
 With `git`:
 
 ```bash
-git clone 
+git clone
 ```
 
 With the [GitHub CLI](https://cli.github.com/):
@@ -49,7 +49,7 @@ You will have to look rename
 
 If you choose to deploy your app with the provided GitHubActions workflows you will need to create the following secrets:
 
-- `APP_ID`: a UUID v4 that identifies your app
+- `APP_KEY`: a UUID v4 that identifies your app
 - `SENTRY_DSN`: your Sentry url to report issues and send telemetry
 
 ## Installation
@@ -62,7 +62,7 @@ Create a `.env.development` file with the following content:
 VITE_PORT=3005
 VITE_API_HOST=localhost
 VITE_MOCK_API=true
-VITE_GRAASP_APP_ID=45678-677889
+VITE_GRAASP_APP_KEY=45678-677889
 VITE_VERSION=latest
 ```
 
@@ -74,7 +74,7 @@ Create a `.env.test` file with the following content:
 VITE_PORT=3333
 VITE_API_HOST=localhost
 VITE_MOCK_API=true
-VITE_GRAASP_APP_ID=45678-677889
+VITE_GRAASP_APP_KEY=45678-677889
 VITE_VERSION=latest
 
 # dont open browser
