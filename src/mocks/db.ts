@@ -1,19 +1,19 @@
-import type { Database, LocalContext } from '@graasp/apps-query-client';
-import { Member, PermissionLevel } from '@graasp/sdk';
+import { CurrentMember, ItemType, Member, PermissionLevel } from '@graasp/sdk';
 
 import { API_HOST } from '@/config/env';
+import type { Database, LocalContext } from '@/query-client';
 
-export const mockContext: LocalContext = {
+export const defaultMockContext: LocalContext = {
   apiHost: API_HOST,
   permission: PermissionLevel.Admin,
-  context: 'player',
+  context: 'builder',
   itemId: '1234-1234-123456-8123-123456',
   memberId: 'mock-member-id',
 };
 
-export const mockMembers: Member[] = [
+export const mockMembers: CurrentMember[] = [
   {
-    id: mockContext.memberId || '',
+    id: defaultMockContext.memberId || '',
     name: 'current-member',
     email: '',
     extra: {},
@@ -36,17 +36,37 @@ const buildDatabase = (
   appContext: Partial<LocalContext>,
   members?: Member[],
 ): Database => ({
+  appContext: { ...defaultMockContext, ...appContext },
   appData: [],
-  appActions: [],
+  appActions: [
+    {
+      id: 'cecc1671-6c9d-4604-a3a2-6d7fad4a5996',
+      type: 'admin-action',
+      memberId: mockMembers[0].id,
+      createdAt: new Date(),
+      itemId: defaultMockContext.itemId,
+      data: { content: 'hello' },
+    },
+    {
+      id: '0c11a63a-f333-47e1-8572-b8f99fe883b0',
+      type: 'other-action',
+      memberId: mockMembers[1].id,
+      createdAt: new Date(),
+      itemId: defaultMockContext.itemId,
+      data: { content: 'other member' },
+    },
+  ],
   members: members ?? mockMembers,
   appSettings: [],
   items: [
     {
-      id: mockContext.itemId,
+      id: defaultMockContext.itemId,
       name: 'app-starter-ts-vite',
       description: null,
       path: '',
       settings: {},
+      type: ItemType.APP,
+      extra: { [ItemType.APP]: { url: 'http://localhost:3002' } },
       creator: mockMembers[0],
       createdAt: new Date(),
       updatedAt: new Date(),

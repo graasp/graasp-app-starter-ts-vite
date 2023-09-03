@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 
-import { useLocalContext } from '@graasp/apps-query-client';
 import { Context, DEFAULT_LANG } from '@graasp/sdk';
+
+import { useLocalContext } from '@/query-client';
 
 import i18n from '../../config/i18n';
 import { AppDataProvider } from '../context/AppDataContext';

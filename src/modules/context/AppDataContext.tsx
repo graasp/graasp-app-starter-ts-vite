@@ -5,7 +5,7 @@ import { AppDataRecord } from '@graasp/sdk/frontend';
 
 import { List } from 'immutable';
 
-import { MUTATION_KEYS, hooks, useMutation } from '../../config/queryClient';
+import { hooks, mutations } from '../../config/queryClient';
 import Loader from '../common/Loader';
 
 type PostAppDataType = {
@@ -48,21 +48,10 @@ type Props = {
 export const AppDataProvider = ({ children }: Props): JSX.Element => {
   const appData = hooks.useAppData();
 
-  const { mutate: postAppData, mutateAsync: postAppDataAsync } = useMutation<
-    AppData,
-    unknown,
-    PostAppDataType
-  >(MUTATION_KEYS.POST_APP_DATA);
-  const { mutate: patchAppData } = useMutation<
-    unknown,
-    unknown,
-    PatchAppDataType
-  >(MUTATION_KEYS.PATCH_APP_DATA);
-  const { mutate: deleteAppData } = useMutation<
-    unknown,
-    unknown,
-    DeleteAppDataType
-  >(MUTATION_KEYS.DELETE_APP_DATA);
+  const { mutate: postAppData, mutateAsync: postAppDataAsync } =
+    mutations.usePostAppData();
+  const { mutate: patchAppData } = mutations.usePatchAppData();
+  const { mutate: deleteAppData } = mutations.useDeleteAppData();
 
   const contextValue = useMemo(
     () => ({

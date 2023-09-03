@@ -13,7 +13,7 @@ export default ({ mode }: { mode: string }): UserConfigExport => {
     base: '',
     server: {
       port: parseInt(process.env.VITE_PORT, 10) || 4001,
-      open: mode !== 'test', // open only when mode is different form test
+      open: mode !== 'test', // open only when mode is different from test
       watch: {
         ignored: ['**/coverage/**'],
       },
@@ -24,7 +24,10 @@ export default ({ mode }: { mode: string }): UserConfigExport => {
     plugins: [
       checker({
         typescript: true,
-        eslint: { lintCommand: 'eslint "./**/*.{ts,tsx}"' },
+        eslint: {
+          lintCommand:
+            'eslint --ignore-pattern "**/query-client*" "src/**/*.{ts,tsx}"',
+        },
       }),
       react(),
       istanbul({
@@ -39,9 +42,6 @@ export default ({ mode }: { mode: string }): UserConfigExport => {
       alias: {
         '@': resolve(__dirname, 'src'),
       },
-    },
-    define: {
-      'process.env.REACT_APP_GRAASP_ASSETS_URL': `"${process.env.VITE_GRAASP_ASSETS_URL}"`,
     },
   });
 };

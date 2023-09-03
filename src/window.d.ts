@@ -1,4 +1,4 @@
-import { Database, LocalContext } from '@graasp/apps-query-client';
+import { Database, LocalContext } from '@/query-client';
 
 declare global {
   interface Window {

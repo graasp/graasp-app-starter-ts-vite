@@ -1,20 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import { mockApi } from '@graasp/apps-query-client';
-
-import { Replay } from '@sentry/browser';
 import * as Sentry from '@sentry/react';
-import { BrowserTracing } from '@sentry/tracing';
+
+// todo: use from apps-query-client
+import { mockApi } from '@/query-client';
 
 import { MOCK_API } from './config/env';
 import { generateSentryConfig } from './config/sentry';
 import './index.css';
-import buildDatabase, { mockContext, mockMembers } from './mocks/db';
+import buildDatabase, { defaultMockContext, mockMembers } from './mocks/db';
 import Root from './modules/Root';
+import { MockSolution } from './query-client/mockServer/mockServer';
 
 Sentry.init({
-  integrations: [new BrowserTracing(), new Replay()],
+  integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
 
   // Set tracesSampleRate to 1.0 to capture 100%
   // of transactions for performance monitoring.
@@ -25,13 +25,16 @@ Sentry.init({
 // setup mocked api for cypress or standalone app
 /* istanbul ignore next */
 if (MOCK_API) {
-  mockApi({
-    externalUrls: [],
-    appContext: window.Cypress ? window.appContext : mockContext,
-    database: window.Cypress
-      ? window.database
-      : buildDatabase(mockContext, mockMembers),
-  });
+  mockApi(
+    {
+      externalUrls: [],
+      appContext: window.Cypress ? window.appContext : defaultMockContext,
+      database: window.Cypress
+        ? window.database
+        : buildDatabase(defaultMockContext, mockMembers),
+    },
+    MockSolution.ServiceWorker,
+  );
 }
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
