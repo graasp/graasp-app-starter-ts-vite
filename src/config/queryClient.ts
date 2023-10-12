@@ -1,19 +1,22 @@
-import { configureQueryClient } from '@/query-client';
+import { Notifier, configureQueryClient } from '@graasp/apps-query-client';
 
-import { GRAASP_APP_KEY, MOCK_API } from './env';
+import { API_HOST, GRAASP_APP_KEY, MOCK_API } from './env';
+
+const notifier: Notifier = (data) => {
+  // eslint-disable-next-line no-console
+  console.log('notifier: ', data);
+};
 
 const {
   queryClient,
   QueryClientProvider,
   hooks,
-  ReactQueryDevtools,
   API_ROUTES,
   mutations,
+  ReactQueryDevtools,
 } = configureQueryClient({
-  notifier: (data) => {
-    // eslint-disable-next-line no-console
-    console.log('notifier: ', data);
-  },
+  API_HOST,
+  notifier,
   keepPreviousData: true,
   // avoid refetching when same data are closely fetched
   staleTime: 1000, // ms
@@ -22,10 +25,10 @@ const {
 });
 
 export {
+  ReactQueryDevtools,
   queryClient,
   QueryClientProvider,
   hooks,
   mutations,
-  ReactQueryDevtools,
   API_ROUTES,
 };

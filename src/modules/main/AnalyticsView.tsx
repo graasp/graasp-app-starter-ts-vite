@@ -1,8 +1,9 @@
 import { Box, Button, Stack, Typography } from '@mui/material';
 
+import { useLocalContext } from '@graasp/apps-query-client';
+
 import { hooks, mutations } from '@/config/queryClient';
 import { ANALYTICS_VIEW_CY } from '@/config/selectors';
-import { useLocalContext } from '@/query-client';
 
 const AnalyticsView = (): JSX.Element => {
   const { permission } = useLocalContext();

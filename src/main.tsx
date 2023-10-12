@@ -1,17 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import * as Sentry from '@sentry/react';
+import { MockSolution, mockApi } from '@graasp/apps-query-client';
 
-// todo: use from apps-query-client
-import { mockApi } from '@/query-client';
+import * as Sentry from '@sentry/react';
 
 import { MOCK_API } from './config/env';
 import { generateSentryConfig } from './config/sentry';
 import './index.css';
 import buildDatabase, { defaultMockContext, mockMembers } from './mocks/db';
 import Root from './modules/Root';
-import { MockSolution } from './query-client/mockServer/mockServer';
 
 Sentry.init({
   integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],

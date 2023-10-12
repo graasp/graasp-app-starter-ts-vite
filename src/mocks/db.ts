@@ -1,7 +1,12 @@
-import { CurrentMember, ItemType, Member, PermissionLevel } from '@graasp/sdk';
+import type { Database, LocalContext } from '@graasp/apps-query-client';
+import {
+  CompleteMember,
+  DiscriminatedItem,
+  ItemType,
+  PermissionLevel,
+} from '@graasp/sdk';
 
 import { API_HOST } from '@/config/env';
-import type { Database, LocalContext } from '@/query-client';
 
 export const defaultMockContext: LocalContext = {
   apiHost: API_HOST,
@@ -11,7 +16,7 @@ export const defaultMockContext: LocalContext = {
   memberId: 'mock-member-id',
 };
 
-export const mockMembers: CurrentMember[] = [
+export const mockMembers: CompleteMember[] = [
   {
     id: defaultMockContext.memberId || '',
     name: 'current-member',
@@ -32,9 +37,22 @@ export const mockMembers: CurrentMember[] = [
   },
 ];
 
+export const mockItem: DiscriminatedItem = {
+  id: defaultMockContext.itemId,
+  name: 'app-starter-ts-vite',
+  description: null,
+  path: '',
+  settings: {},
+  type: ItemType.APP,
+  extra: { [ItemType.APP]: { url: 'http://localhost:3002' } },
+  creator: mockMembers[0],
+  createdAt: new Date(),
+  updatedAt: new Date(),
+};
+
 const buildDatabase = (
   appContext: Partial<LocalContext>,
-  members?: Member[],
+  members?: CompleteMember[],
 ): Database => ({
   appContext: { ...defaultMockContext, ...appContext },
   appData: [],
@@ -42,36 +60,23 @@ const buildDatabase = (
     {
       id: 'cecc1671-6c9d-4604-a3a2-6d7fad4a5996',
       type: 'admin-action',
-      memberId: mockMembers[0].id,
+      member: mockMembers[0],
       createdAt: new Date(),
-      itemId: defaultMockContext.itemId,
+      item: mockItem,
       data: { content: 'hello' },
     },
     {
       id: '0c11a63a-f333-47e1-8572-b8f99fe883b0',
       type: 'other-action',
-      memberId: mockMembers[1].id,
+      member: mockMembers[1],
       createdAt: new Date(),
-      itemId: defaultMockContext.itemId,
+      item: mockItem,
       data: { content: 'other member' },
     },
   ],
   members: members ?? mockMembers,
   appSettings: [],
-  items: [
-    {
-      id: defaultMockContext.itemId,
-      name: 'app-starter-ts-vite',
-      description: null,
-      path: '',
-      settings: {},
-      type: ItemType.APP,
-      extra: { [ItemType.APP]: { url: 'http://localhost:3002' } },
-      creator: mockMembers[0],
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    },
-  ],
+  items: [mockItem],
 });
 
 export default buildDatabase;

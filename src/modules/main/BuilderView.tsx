@@ -1,7 +1,8 @@
 import { Box, Button, Stack, Typography } from '@mui/material';
 
+import { useLocalContext } from '@graasp/apps-query-client';
+
 import { BUILDER_VIEW_CY } from '@/config/selectors';
-import { useLocalContext } from '@/query-client';
 
 import { useAppDataContext } from '../context/AppDataContext';
 

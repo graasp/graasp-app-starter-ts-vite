@@ -5,10 +5,14 @@ import { CssBaseline, ThemeProvider, createTheme, styled } from '@mui/material';
 import { grey, orange, pink } from '@mui/material/colors';
 import { StyledEngineProvider } from '@mui/material/styles';
 
+import {
+  GraaspContextDevTool,
+  WithLocalContext,
+  WithTokenContext,
+} from '@graasp/apps-query-client';
+
 import { defaultMockContext, mockMembers } from '@/mocks/db';
 import Loader from '@/modules/common/Loader';
-import { WithLocalContext, WithTokenContext } from '@/query-client';
-import GraaspContextDevTool from '@/query-client/components/GraaspContextDevTool';
 import { useObjectState } from '@/utils/hooks';
 
 import i18nConfig from '../config/i18n';
