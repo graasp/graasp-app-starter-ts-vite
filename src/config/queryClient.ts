@@ -2,6 +2,9 @@ import { Notifier, configureQueryClient } from '@graasp/apps-query-client';
 
 import { API_HOST, GRAASP_APP_KEY, MOCK_API } from './env';
 
+// eslint-disable-next-line no-console
+console.log('mockAPI value:', MOCK_API);
+
 const notifier: Notifier = (data) => {
   // eslint-disable-next-line no-console
   console.log('notifier: ', data);

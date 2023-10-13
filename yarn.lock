@@ -3175,7 +3175,7 @@ __metadata:
 
 "@graasp/apps-query-client@github:graasp/graasp-apps-query-client#159-add-msw-alternative-for-mocking":
   version: 2.0.4
-  resolution: "@graasp/apps-query-client@https://github.com/graasp/graasp-apps-query-client.git#commit=65cdac0c24232e15601f96e8cabfa5540f582a5a"
+  resolution: "@graasp/apps-query-client@https://github.com/graasp/graasp-apps-query-client.git#commit=b828f0fab56c4deb919bac39cb0753b95dc2c46d"
   dependencies:
     "@emotion/react": 11.11.1
     "@emotion/styled": 11.11.0
@@ -3195,7 +3195,7 @@ __metadata:
     "@tanstack/react-query-devtools": ^4.28.0
     react: ^18.0.0
     react-dom: ^18.0.0
-  checksum: 2ee27c95664ecd4dd5c15176e8929deec0b51383f8a07addc599ff492dbb901fd4296fc1d15914c6c789063e918a117282ae582119180259b6bbfb1913bb0727
+  checksum: c64fe2e612a99f3ea6f1f4fb9f2dc51bf89b52220bcaf20d5c49ff59c8d1faf2ccec0af32b179a9bdf7f2bd6292c0872c2a9604baee0289995447ccca4f59d66
   languageName: node
   linkType: hard
 

@@ -6,7 +6,7 @@ export default defineConfig({
   e2e: {
     env: {
       VITE_API_HOST: process.env.VITE_API_HOST,
-      VITE_MOCK_API: process.env.VITE_MOCK_API,
+      VITE_ENABLE_MOCK_API: process.env.VITE_ENABLE_MOCK_API,
       VITE_GRAASP_APP_KEY: process.env.VITE_GRAASP_APP_KEY,
       VITE_VERSION: process.env.VITE_VERSION,
     },

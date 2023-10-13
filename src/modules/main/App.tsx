@@ -21,6 +21,8 @@ const App = (): JSX.Element => {
       i18n.changeLanguage(lang);
     }
   }, [context]);
+  // eslint-disable-next-line no-console
+  console.log(context.context);
 
   const renderContent = (): JSX.Element => {
     switch (context.context) {
