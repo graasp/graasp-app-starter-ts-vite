@@ -38,6 +38,7 @@
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/ban-ts-comment": "off",
     "import/no-import-module-exports": "off",
+    "no-console": ["error", { "allow": ["error", "warn", "debug", "info"] }],
     "import/no-extraneous-dependencies": [
       "error",
       {

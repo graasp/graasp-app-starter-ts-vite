@@ -51,8 +51,6 @@ export const SettingsProvider: FC<Prop> = ({ children }) => {
     newValue: AllSettingsDataType,
   ): void => {
     if (appSettingsList) {
-      // todo: types are not inferred correctly here
-      // @ts-ignore
       const previousSetting = appSettingsList.find((s) => s.name === name);
       // setting does not exist
       if (!previousSetting) {

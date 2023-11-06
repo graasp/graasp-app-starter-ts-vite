@@ -4,8 +4,6 @@ import { useLocalContext } from '@graasp/apps-query-client';
 import { Context, DEFAULT_LANG } from '@graasp/sdk';
 
 import i18n from '../../config/i18n';
-import { AppDataProvider } from '../context/AppDataContext';
-import { MembersProvider } from '../context/MembersContext';
 import { SettingsProvider } from '../context/SettingsContext';
 import AnalyticsView from './AnalyticsView';
 import BuilderView from './BuilderView';
@@ -21,8 +19,6 @@ const App = (): JSX.Element => {
       i18n.changeLanguage(lang);
     }
   }, [context]);
-  // eslint-disable-next-line no-console
-  console.log(context.context);
 
   const renderContent = (): JSX.Element => {
     switch (context.context) {
@@ -38,13 +34,7 @@ const App = (): JSX.Element => {
     }
   };
 
-  return (
-    <MembersProvider>
-      <SettingsProvider>
-        <AppDataProvider>{renderContent()}</AppDataProvider>
-      </SettingsProvider>
-    </MembersProvider>
-  );
+  return <SettingsProvider>{renderContent()}</SettingsProvider>;
 };
 
 export default App;

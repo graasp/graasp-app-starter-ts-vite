@@ -10,8 +10,8 @@
   "dependencies": {
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
-    "@graasp/apps-query-client": "github:graasp/graasp-apps-query-client#159-add-msw-alternative-for-mocking",
-    "@graasp/sdk": "github:graasp/graasp-sdk#251-fix-use-discriminateditem-instead-of-item-in-types",
+    "@graasp/apps-query-client": "github:graasp/graasp-apps-query-client#188-fix-msw-return-for-some-calls",
+    "@graasp/sdk": "1.10.1",
     "@graasp/ui": "3.5.4",
     "@mui/icons-material": "5.14.7",
     "@mui/lab": "5.0.0-alpha.137",
@@ -63,6 +63,7 @@
     "@typescript-eslint/eslint-plugin": "6.7.5",
     "@typescript-eslint/parser": "6.7.5",
     "@vitejs/plugin-react": "^4.1.0",
+    "axios": "0.27.0",
     "concurrently": "8.2.1",
     "cypress": "13.3.0",
     "env-cmd": "10.1.0",
@@ -109,11 +110,8 @@
       "src/**/*.d.ts"
     ]
   },
-  "packageManager": "yarn@3.6.4",
+  "packageManager": "yarn@4.0.1",
   "msw": {
     "workerDirectory": "public"
-  },
-  "resolutions": {
-    "@graasp/sdk": "github:graasp/graasp-sdk#251-fix-use-discriminateditem-instead-of-item-in-types"
   }
 }

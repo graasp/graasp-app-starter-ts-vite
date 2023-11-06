@@ -1,5 +1,7 @@
 import { FC } from 'react';
 import { I18nextProvider } from 'react-i18next';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 import { CssBaseline, ThemeProvider, createTheme, styled } from '@mui/material';
 import { grey, orange, pink } from '@mui/material/colors';
@@ -11,17 +13,17 @@ import {
   WithTokenContext,
 } from '@graasp/apps-query-client';
 
-import { defaultMockContext, mockMembers } from '@/mocks/db';
-import Loader from '@/modules/common/Loader';
-import { useObjectState } from '@/utils/hooks';
-
-import i18nConfig from '../config/i18n';
+import i18nConfig from '@/config/i18n';
 import {
   QueryClientProvider,
   ReactQueryDevtools,
   hooks,
   queryClient,
-} from '../config/queryClient';
+} from '@/config/queryClient';
+import { defaultMockContext, mockMembers } from '@/mocks/db';
+import Loader from '@/modules/common/Loader';
+import { useObjectState } from '@/utils/hooks';
+
 import App from './main/App';
 
 // declare the module to enable theme modification
@@ -70,8 +72,7 @@ const RootDiv = styled('div')({
 
 const Root: FC = () => {
   const [mockContext, setMockContext] = useObjectState(defaultMockContext);
-  // eslint-disable-next-line no-console
-  console.log(mockContext);
+
   return (
     <RootDiv>
       {/* Used to define the order of injected properties between JSS and emotion */}
@@ -80,13 +81,13 @@ const Root: FC = () => {
           <CssBaseline enableColorScheme />
           <I18nextProvider i18n={i18nConfig}>
             <QueryClientProvider client={queryClient}>
+              <ToastContainer />
               <WithLocalContext
                 defaultValue={window.Cypress ? window.appContext : mockContext}
                 LoadingComponent={<Loader />}
                 useGetLocalContext={hooks.useGetLocalContext}
                 useAutoResize={hooks.useAutoResize}
                 onError={() => {
-                  // eslint-disable-next-line no-console
                   console.error(
                     'An error occurred while fetching the context.',
                   );
@@ -96,7 +97,6 @@ const Root: FC = () => {
                   LoadingComponent={<Loader />}
                   useAuthToken={hooks.useAuthToken}
                   onError={() => {
-                    // eslint-disable-next-line no-console
                     console.error(
                       'An error occurred while requesting the token.',
                     );
