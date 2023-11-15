@@ -2,8 +2,7 @@ name: cypress tests
 
 on:
   push:
-    branches-ignore:
-      - 'release-please-**'
+
 
 jobs:
   cypress-run:
@@ -11,12 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v3
-
-      - name: set up node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
+        uses: actions/checkout@v4
 
       - name: Yarn Install and Cache
         uses: graasp/graasp-deploy/.github/actions/yarn-install-and-cache@v1

@@ -11,7 +11,7 @@
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
     "@graasp/apps-query-client": "github:graasp/graasp-apps-query-client#188-fix-msw-return-for-some-calls",
-    "@graasp/sdk": "1.10.1",
+    "@graasp/sdk": "github:graasp/graasp-sdk#336-remove-fastify-and-aws-sdk",
     "@graasp/ui": "3.5.4",
     "@mui/icons-material": "5.14.7",
     "@mui/lab": "5.0.0-alpha.137",
@@ -51,12 +51,16 @@
     "cypress:open": "env-cmd -f ./.env.development cypress open",
     "test": "concurrently -k -s first \"yarn start:test\" \"yarn test:ci\" ",
     "test:ci": "env-cmd -f ./.env.test cypress run --browser chrome --headless && nyc report --reporter=text --reporter=text-summary",
-    "cov:report": "open ./coverage/lcov-report/index.html"
+    "cov:report": "open ./coverage/lcov-report/index.html",
+    "pw:open": "env-cmd -f ./.env.development playwright test --ui",
+    "pw:run": "env-cmd -f ./.env.test playwright test",
+    "pw:report": "playwright show-report"
   },
   "devDependencies": {
     "@commitlint/cli": "17.7.2",
     "@commitlint/config-conventional": "17.7.0",
     "@cypress/code-coverage": "3.12.3",
+    "@playwright/test": "^1.39.0",
     "@trivago/prettier-plugin-sort-imports": "^4.2.0",
     "@types/i18n": "0.13.6",
     "@types/uuid": "9.0.2",
@@ -111,6 +115,9 @@
     ]
   },
   "packageManager": "yarn@4.0.1",
+  "resolutions": {
+    "@graasp/sdk": "github:graasp/graasp-sdk#336-remove-fastify-and-aws-sdk"
+  },
   "msw": {
     "workerDirectory": "public"
   }

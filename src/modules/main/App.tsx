@@ -4,10 +4,12 @@ import { useLocalContext } from '@graasp/apps-query-client';
 import { Context, DEFAULT_LANG } from '@graasp/sdk';
 
 import i18n from '../../config/i18n';
-import { SettingsProvider } from '../context/SettingsContext';
+// import { SettingsProvider } from '../context/SettingsContext';
 import AnalyticsView from './AnalyticsView';
 import BuilderView from './BuilderView';
-import PlayerView from './PlayerView';
+
+// import BuilderView from './BuilderView';
+// import PlayerView from './PlayerView';
 
 const App = (): JSX.Element => {
   const context = useLocalContext();
@@ -20,21 +22,17 @@ const App = (): JSX.Element => {
     }
   }, [context]);
 
-  const renderContent = (): JSX.Element => {
-    switch (context.context) {
-      case Context.Builder:
-        return <BuilderView />;
+  switch (context.context) {
+    case Context.Builder:
+      return <BuilderView />;
 
-      case Context.Analytics:
-        return <AnalyticsView />;
+    case Context.Analytics:
+      return <AnalyticsView />;
 
-      case Context.Player:
-      default:
-        return <PlayerView />;
-    }
-  };
-
-  return <SettingsProvider>{renderContent()}</SettingsProvider>;
+    case Context.Player:
+    default:
+      return <div>Default</div>; // <PlayerView />;
+  }
 };
 
 export default App;

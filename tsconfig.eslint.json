@@ -3,9 +3,10 @@
   "include": [
     "vite.config.ts",
     "cypress.config.ts",
+    "playwright.config.ts",
     "src/**/*.tsx",
     "src/**/*.ts",
-    "test/**/*.ts",
+    "tests/**/*.ts",
     "cypress/**/*.ts"
   ]
 }

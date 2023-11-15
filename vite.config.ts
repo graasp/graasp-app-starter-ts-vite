@@ -17,6 +17,7 @@ export default ({ mode }: { mode: string }): UserConfigExport => {
       watch: {
         ignored: ['**/coverage/**'],
       },
+      host: true, // this exposes the app on your local network, useful for running it in the mobile simulator
     },
     build: {
       outDir: 'build',
@@ -25,8 +26,7 @@ export default ({ mode }: { mode: string }): UserConfigExport => {
       checker({
         typescript: true,
         eslint: {
-          lintCommand:
-            'eslint --ignore-pattern "**/query-client*" "src/**/*.{ts,tsx}"',
+          lintCommand: 'eslint "src/**/*.{ts,tsx}"',
         },
       }),
       react(),

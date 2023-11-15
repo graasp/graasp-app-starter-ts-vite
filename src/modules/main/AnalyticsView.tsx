@@ -31,7 +31,7 @@ const AnalyticsView = (): JSX.Element => {
         </Stack>
         <Box p={2}>
           <Typography>App Actions</Typography>
-          <pre>{JSON.stringify(appAction?.toJS(), null, 2)}</pre>
+          <pre>{JSON.stringify(appAction, null, 2)}</pre>
         </Box>
       </Stack>
     </div>

@@ -24,7 +24,7 @@ const PlayerView = (): JSX.Element => {
       Player as {permission}
       <Box p={2}>
         <Typography>Members</Typography>
-        <pre>{JSON.stringify(members?.toJS(), null, 2)}</pre>
+        <pre>{JSON.stringify(members, null, 2)}</pre>
       </Box>
       <Unity
         unityProvider={unityProvider}

@@ -2,8 +2,6 @@ import { Box, Button, Stack, Typography } from '@mui/material';
 
 import { useLocalContext } from '@graasp/apps-query-client';
 
-import { BUILDER_VIEW_CY } from '@/config/selectors';
-
 import { hooks, mutations } from '../../config/queryClient';
 
 const AppSettingsDisplay = (): JSX.Element => {
@@ -12,7 +10,17 @@ const AppSettingsDisplay = (): JSX.Element => {
     <Box p={2}>
       <Typography>App Setting</Typography>
       {appSetting ? (
-        <pre>{JSON.stringify(appSetting.toJS(), null, 2)}</pre>
+        <pre
+          style={{
+            width: '100%',
+            maxWidth: '100%',
+            // overflowWrap: 'anywhere',
+            wordBreak: 'break-all',
+            // fontSize: '10px',
+          }}
+        >
+          {JSON.stringify(appSetting, null, 2)}
+        </pre>
       ) : (
         <Typography>Loading</Typography>
       )}
@@ -29,8 +37,8 @@ const BuilderView = (): JSX.Element => {
   const { mutate: postAppSetting } = mutations.usePostAppSetting();
 
   return (
-    <div data-cy={BUILDER_VIEW_CY}>
-      Builder as {permission}
+    <div>
+      <Typography>Builder as {permission}</Typography>
       <Stack direction="column" spacing={2}>
         <Stack direction="row" justifyContent="center" spacing={1}>
           <Button
@@ -52,7 +60,7 @@ const BuilderView = (): JSX.Element => {
           <Button
             variant="outlined"
             onClick={() => {
-              const data = appData?.last();
+              const data = appData?.at(-1);
               patchAppData({
                 id: data?.id || '',
                 data: { content: `${data?.data.content}-` },
@@ -63,14 +71,24 @@ const BuilderView = (): JSX.Element => {
           </Button>
           <Button
             variant="outlined"
-            onClick={() => deleteAppData({ id: appData?.last()?.id || '' })}
+            onClick={() => deleteAppData({ id: appData?.at(-1)?.id || '' })}
           >
             Delete last App Data
           </Button>
         </Stack>
-        <Box p={2}>
+        <Box p={2} overflow="hidden">
           <Typography>App Data</Typography>
-          <pre>{JSON.stringify(appData?.toJS(), null, 2)}</pre>
+          <pre
+            style={{
+              width: '100%',
+              maxWidth: '100%',
+              wordWrap: 'break-word',
+              wordBreak: 'break-word',
+              fontSize: '10px',
+            }}
+          >
+            {JSON.stringify(appData, null, 2)}
+          </pre>
         </Box>
         <AppSettingsDisplay />
       </Stack>

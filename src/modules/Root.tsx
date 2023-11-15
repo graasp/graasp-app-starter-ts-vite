@@ -24,6 +24,7 @@ import { defaultMockContext, mockMembers } from '@/mocks/db';
 import Loader from '@/modules/common/Loader';
 import { useObjectState } from '@/utils/hooks';
 
+import { MOCK_API } from '../config/env';
 import App from './main/App';
 
 // declare the module to enable theme modification
@@ -81,12 +82,11 @@ const Root: FC = () => {
           <CssBaseline enableColorScheme />
           <I18nextProvider i18n={i18nConfig}>
             <QueryClientProvider client={queryClient}>
-              <ToastContainer />
               <WithLocalContext
                 defaultValue={window.Cypress ? window.appContext : mockContext}
-                LoadingComponent={<Loader />}
+                // LoadingComponent={<Loader />}
                 useGetLocalContext={hooks.useGetLocalContext}
-                useAutoResize={hooks.useAutoResize}
+                // useAutoResize={hooks.useAutoResize}
                 onError={() => {
                   console.error(
                     'An error occurred while fetching the context.',
@@ -102,8 +102,9 @@ const Root: FC = () => {
                     );
                   }}
                 >
+                  <ToastContainer position="bottom-right" />
                   <App />
-                  {import.meta.env.DEV && (
+                  {import.meta.env.DEV && MOCK_API && (
                     <GraaspContextDevTool
                       members={mockMembers}
                       context={mockContext}
@@ -113,7 +114,7 @@ const Root: FC = () => {
                 </WithTokenContext>
               </WithLocalContext>
               {import.meta.env.DEV && (
-                <ReactQueryDevtools position="bottom-left" />
+                <ReactQueryDevtools position="bottom-right" />
               )}
             </QueryClientProvider>
           </I18nextProvider>
