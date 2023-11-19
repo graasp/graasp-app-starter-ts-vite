@@ -7,31 +7,44 @@ import istanbul from 'vite-plugin-istanbul';
 
 // https://vitejs.dev/config/
 export default ({ mode }: { mode: string }): UserConfigExport => {
-  process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
+  process.env = {
+    ...process.env,
+    ...loadEnv(mode, process.cwd()),
+    VITE_BUILD_TIMESTAMP: new Date().toISOString(),
+  };
 
   return defineConfig({
     base: '',
     server: {
       port: parseInt(process.env.VITE_PORT, 10) || 4001,
-      open: mode !== 'test', // open only when mode is different form test
+      open: mode !== 'test', // open only when mode is different from test
       watch: {
-        ignored: ['**/coverage/**'],
+        ignored: ['**/coverage/**', '**/cypress/downloads/**'],
       },
+    },
+    preview: {
+      port: parseInt(process.env.VITE_PORT || '3333', 10),
+      strictPort: true,
     },
     build: {
       outDir: 'build',
     },
     plugins: [
-      checker({
-        typescript: true,
-        eslint: { lintCommand: 'eslint "./**/*.{ts,tsx}"' },
-      }),
+      mode === 'test'
+        ? undefined
+        : checker({
+            typescript: true,
+            eslint: {
+              lintCommand: 'eslint "src/**/*.{ts,tsx}"',
+            },
+          }),
       react(),
       istanbul({
         include: 'src/*',
-        exclude: ['node_modules', 'test/'],
+        exclude: ['node_modules', 'test/', '.nyc_output', 'coverage'],
         extension: ['.js', '.ts', '.tsx'],
         requireEnv: false,
+        forceBuildInstrument: mode === 'test',
         checkProd: true,
       }),
     ],
@@ -39,9 +52,6 @@ export default ({ mode }: { mode: string }): UserConfigExport => {
       alias: {
         '@': resolve(__dirname, 'src'),
       },
-    },
-    define: {
-      'process.env.REACT_APP_GRAASP_ASSETS_URL': `"${process.env.VITE_GRAASP_ASSETS_URL}"`,
     },
   });
 };

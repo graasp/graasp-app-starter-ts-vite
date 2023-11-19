@@ -4,16 +4,20 @@ import { BUILDER_VIEW_CY, buildDataCy } from '../../../src/config/selectors';
 
 describe('Builder View', () => {
   beforeEach(() => {
-    cy.setUpApi({
-      appContext: {
+    cy.setUpApi(
+      {},
+      {
         context: Context.Builder,
-        permission: PermissionLevel.Admin,
+        permission: PermissionLevel.Read,
       },
-    });
+    );
     cy.visit('/');
   });
 
   it('App', () => {
-    cy.get(buildDataCy(BUILDER_VIEW_CY));
+    cy.get(buildDataCy(BUILDER_VIEW_CY)).should(
+      'contain.text',
+      'Builder as read',
+    );
   });
 });
