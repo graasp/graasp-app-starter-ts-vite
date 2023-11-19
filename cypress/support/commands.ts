@@ -1,5 +1,5 @@
 /// <reference types="../../src/window" />
-import { Database } from '@graasp/apps-query-client';
+import { Database, LocalContext } from '@graasp/apps-query-client';
 
 import { CURRENT_MEMBER, MEMBERS } from '../fixtures/members';
 import { MOCK_SERVER_ITEM } from '../fixtures/mockItem';
@@ -13,8 +13,8 @@ declare global {
        * @example cy.dataCy('greeting')
        */
       setUpApi(
-        database: Partial<Omit<Database, 'appContext'>>,
-        appContext: Partial<Database['appContext']>,
+        database: Partial<Database>,
+        appContext: Partial<LocalContext>,
       ): void;
     }
   }
@@ -40,5 +40,4 @@ Cypress.Commands.add('setUpApi', (database, appContext) => {
       ...database,
     };
   });
-  // cy.intercept('DELETE', '/__mocks/reset').as('resetAPI');
 });

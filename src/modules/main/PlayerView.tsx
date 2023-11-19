@@ -1,5 +1,3 @@
-import { Unity, useUnityContext } from 'react-unity-webgl';
-
 import { Box, Typography } from '@mui/material';
 
 import { useLocalContext } from '@graasp/apps-query-client';
@@ -12,24 +10,13 @@ const PlayerView = (): JSX.Element => {
   const { data: appContext } = hooks.useAppContext();
   const members = appContext?.members;
 
-  const { unityProvider } = useUnityContext({
-    loaderUrl: './build/CoupledOscillations.loader.js',
-    dataUrl: './build/CoupledOscillations.data',
-    frameworkUrl: './build/CoupledOscillations.framework.js',
-    codeUrl: './build/CoupledOscillations.wasm',
-  });
-
   return (
     <div data-cy={PLAYER_VIEW_CY}>
       Player as {permission}
       <Box p={2}>
         <Typography>Members</Typography>
-        <pre>{JSON.stringify(members?.toJS(), null, 2)}</pre>
+        <pre>{JSON.stringify(members, null, 2)}</pre>
       </Box>
-      <Unity
-        unityProvider={unityProvider}
-        style={{ width: 800, height: 600 }}
-      />
     </div>
   );
 };

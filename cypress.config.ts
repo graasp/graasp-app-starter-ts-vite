@@ -8,9 +8,8 @@ export default defineConfig({
       VITE_API_HOST: process.env.VITE_API_HOST,
       VITE_ENABLE_MOCK_API: process.env.VITE_ENABLE_MOCK_API,
       VITE_GRAASP_APP_KEY: process.env.VITE_GRAASP_APP_KEY,
-      VITE_VERSION: process.env.VITE_VERSION,
     },
-    retries: 1,
+    retries: { runMode: 1, openMode: 0 },
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
     setupNodeEvents(on, config) {

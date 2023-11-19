@@ -7,7 +7,7 @@ import { ANALYTICS_VIEW_CY } from '@/config/selectors';
 
 const AnalyticsView = (): JSX.Element => {
   const { permission } = useLocalContext();
-  const { data: appAction, refetch } = hooks.useAppActions();
+  const { data: appActions, refetch } = hooks.useAppActions();
   const { mutate: postAppAction } = mutations.usePostAppAction();
   return (
     <div data-cy={ANALYTICS_VIEW_CY}>
@@ -31,7 +31,7 @@ const AnalyticsView = (): JSX.Element => {
         </Stack>
         <Box p={2}>
           <Typography>App Actions</Typography>
-          <pre>{JSON.stringify(appAction?.toJS(), null, 2)}</pre>
+          <pre>{JSON.stringify(appActions, null, 2)}</pre>
         </Box>
       </Stack>
     </div>

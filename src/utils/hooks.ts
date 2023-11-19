@@ -4,6 +4,7 @@ export type UpdateArgument<T extends object> =
   | T
   | ((previousArg: T) => Partial<T>);
 
+/* istanbul ignore next */
 export function useObjectState<T extends object>(
   initialValue: T,
 ): [T, (arg: UpdateArgument<T>) => void] {

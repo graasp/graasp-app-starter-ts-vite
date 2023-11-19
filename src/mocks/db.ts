@@ -23,8 +23,8 @@ export const mockMembers: CompleteMember[] = [
     email: '',
     extra: {},
     type: 'individual',
-    createdAt: new Date('1996-09-08T19:00:00'),
-    updatedAt: new Date(),
+    createdAt: new Date('1996-09-08T19:00:00').toISOString(),
+    updatedAt: new Date().toISOString(),
   },
   {
     id: 'mock-member-id-2',
@@ -32,8 +32,8 @@ export const mockMembers: CompleteMember[] = [
     email: '',
     extra: {},
     type: 'individual',
-    createdAt: new Date('1995-02-02T15:00:00'),
-    updatedAt: new Date(),
+    createdAt: new Date('1995-02-02T15:00:00').toISOString(),
+    updatedAt: new Date().toISOString(),
   },
 ];
 
@@ -46,22 +46,18 @@ export const mockItem: DiscriminatedItem = {
   type: ItemType.APP,
   extra: { [ItemType.APP]: { url: 'http://localhost:3002' } },
   creator: mockMembers[0],
-  createdAt: new Date(),
-  updatedAt: new Date(),
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
 };
 
-const buildDatabase = (
-  appContext: Partial<LocalContext>,
-  members?: CompleteMember[],
-): Database => ({
-  appContext: { ...defaultMockContext, ...appContext },
+const buildDatabase = (members?: CompleteMember[]): Database => ({
   appData: [],
   appActions: [
     {
       id: 'cecc1671-6c9d-4604-a3a2-6d7fad4a5996',
       type: 'admin-action',
       member: mockMembers[0],
-      createdAt: new Date(),
+      createdAt: new Date().toISOString(),
       item: mockItem,
       data: { content: 'hello' },
     },
@@ -69,7 +65,7 @@ const buildDatabase = (
       id: '0c11a63a-f333-47e1-8572-b8f99fe883b0',
       type: 'other-action',
       member: mockMembers[1],
-      createdAt: new Date(),
+      createdAt: new Date().toISOString(),
       item: mockItem,
       data: { content: 'other member' },
     },

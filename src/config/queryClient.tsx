@@ -1,6 +1,10 @@
 import { toast } from 'react-toastify';
 
-import { Notifier, configureQueryClient } from '@graasp/apps-query-client';
+import {
+  Notifier,
+  ROUTINES,
+  configureQueryClient,
+} from '@graasp/apps-query-client';
 
 import type { AxiosError } from 'axios';
 
@@ -8,11 +12,35 @@ import { InfoToast, NetworkErrorToast } from '@/modules/common/CustomToasts';
 
 import { API_HOST, GRAASP_APP_KEY, MOCK_API } from './env';
 
+const {
+  deleteAppDataRoutine,
+  deleteAppSettingRoutine,
+  getAppDataRoutine,
+  getAppSettingsRoutine,
+  getLocalContextRoutine,
+  patchAppDataRoutine,
+  patchAppSettingRoutine,
+  postAppActionRoutine,
+  postAppDataRoutine,
+  postAppSettingRoutine,
+} = ROUTINES;
+
+const EXCLUDED_NOTIFICATION_TYPES: string[] = [
+  getAppDataRoutine.SUCCESS,
+  postAppDataRoutine.SUCCESS,
+  patchAppDataRoutine.SUCCESS,
+  deleteAppDataRoutine.SUCCESS,
+  getAppSettingsRoutine.SUCCESS,
+  postAppSettingRoutine.SUCCESS,
+  patchAppSettingRoutine.SUCCESS,
+  deleteAppSettingRoutine.SUCCESS,
+  postAppActionRoutine.SUCCESS,
+  getLocalContextRoutine.SUCCESS,
+];
+
 const notifier: Notifier = (data) => {
   const { payload } = data;
   if (payload) {
-    // eslint-disable-next-line no-console
-    console.log(data.payload);
     // axios error
     if (
       payload.error &&
@@ -29,7 +57,12 @@ const notifier: Notifier = (data) => {
         />,
       );
     }
-    toast.success(<InfoToast type={data.type} payload={payload} />);
+    // only info messages for types that we do not know or when we have the debug env variable
+    if (
+      !EXCLUDED_NOTIFICATION_TYPES.includes(data.type) ||
+      import.meta.env.VITE_DEBUG
+    )
+      toast.success(<InfoToast type={data.type} payload={payload} />);
   }
 };
 

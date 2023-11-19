@@ -15,6 +15,9 @@ describe('Builder View', () => {
   });
 
   it('App', () => {
-    cy.get(buildDataCy(BUILDER_VIEW_CY));
+    cy.get(buildDataCy(BUILDER_VIEW_CY)).should(
+      'contain.text',
+      'Builder as read',
+    );
   });
 });

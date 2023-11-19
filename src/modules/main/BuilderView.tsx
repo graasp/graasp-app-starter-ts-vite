@@ -7,12 +7,12 @@ import { BUILDER_VIEW_CY } from '@/config/selectors';
 import { hooks, mutations } from '../../config/queryClient';
 
 const AppSettingsDisplay = (): JSX.Element => {
-  const { data: appSetting } = hooks.useAppSettings();
+  const { data: appSettings } = hooks.useAppSettings();
   return (
     <Box p={2}>
       <Typography>App Setting</Typography>
-      {appSetting ? (
-        <pre>{JSON.stringify(appSetting.toJS(), null, 2)}</pre>
+      {appSettings ? (
+        <pre>{JSON.stringify(appSettings, null, 2)}</pre>
       ) : (
         <Typography>Loading</Typography>
       )}
@@ -22,7 +22,7 @@ const AppSettingsDisplay = (): JSX.Element => {
 
 const BuilderView = (): JSX.Element => {
   const { permission } = useLocalContext();
-  const { data: appData } = hooks.useAppData();
+  const { data: appDatas } = hooks.useAppData();
   const { mutate: postAppData } = mutations.usePostAppData();
   const { mutate: patchAppData } = mutations.usePatchAppData();
   const { mutate: deleteAppData } = mutations.useDeleteAppData();
@@ -52,7 +52,7 @@ const BuilderView = (): JSX.Element => {
           <Button
             variant="outlined"
             onClick={() => {
-              const data = appData?.last();
+              const data = appDatas?.at(-1);
               patchAppData({
                 id: data?.id || '',
                 data: { content: `${data?.data.content}-` },
@@ -63,14 +63,14 @@ const BuilderView = (): JSX.Element => {
           </Button>
           <Button
             variant="outlined"
-            onClick={() => deleteAppData({ id: appData?.last()?.id || '' })}
+            onClick={() => deleteAppData({ id: appDatas?.at(-1)?.id || '' })}
           >
             Delete last App Data
           </Button>
         </Stack>
         <Box p={2}>
           <Typography>App Data</Typography>
-          <pre>{JSON.stringify(appData?.toJS(), null, 2)}</pre>
+          <pre>{JSON.stringify(appDatas, null, 2)}</pre>
         </Box>
         <AppSettingsDisplay />
       </Stack>

@@ -13,11 +13,6 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
 
-      - name: set up node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-
       - name: Yarn Install and Cache
         uses: graasp/graasp-deploy/.github/actions/yarn-install-and-cache@v1
         with:
