@@ -8,9 +8,10 @@ import istanbul from 'vite-plugin-istanbul';
 // https://vitejs.dev/config/
 export default ({ mode }: { mode: string }): UserConfigExport => {
   process.env = {
+    VITE_VERSION: 'default',
+    VITE_BUILD_TIMESTAMP: new Date().toISOString(),
     ...process.env,
     ...loadEnv(mode, process.cwd()),
-    VITE_BUILD_TIMESTAMP: new Date().toISOString(),
   };
 
   return defineConfig({
