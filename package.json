@@ -15,7 +15,7 @@
     "@graasp/sdk": "3.0.1",
     "@graasp/ui": "4.1.0",
     "@mui/icons-material": "5.14.18",
-    "@mui/lab": "5.0.0-alpha.137",
+    "@mui/lab": "5.0.0-alpha.153",
     "@mui/material": "5.14.18",
     "@sentry/react": "7.80.1",
     "@tanstack/react-query": "^4.36.1",
