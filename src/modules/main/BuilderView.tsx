@@ -20,10 +20,25 @@ const AppSettingsDisplay = (): JSX.Element => {
   );
 };
 
+const AppActionsDisplay = (): JSX.Element => {
+  const { data: appActions } = hooks.useAppActions();
+  return (
+    <Box p={2}>
+      <Typography>App Actions</Typography>
+      {appActions ? (
+        <pre>{JSON.stringify(appActions, null, 2)}</pre>
+      ) : (
+        <Typography>Loading</Typography>
+      )}
+    </Box>
+  );
+};
+
 const BuilderView = (): JSX.Element => {
   const { permission } = useLocalContext();
   const { data: appDatas } = hooks.useAppData();
   const { mutate: postAppData } = mutations.usePostAppData();
+  const { mutate: postAppAction } = mutations.usePostAppAction();
   const { mutate: patchAppData } = mutations.usePatchAppData();
   const { mutate: deleteAppData } = mutations.useDeleteAppData();
   const { mutate: postAppSetting } = mutations.usePostAppSetting();
@@ -33,6 +48,14 @@ const BuilderView = (): JSX.Element => {
       Builder as {permission}
       <Stack direction="column" spacing={2}>
         <Stack direction="row" justifyContent="center" spacing={1}>
+          <Button
+            variant="outlined"
+            onClick={() =>
+              postAppAction({ data: { content: 'hello' }, type: 'an-action' })
+            }
+          >
+            Post new App Action
+          </Button>
           <Button
             variant="outlined"
             onClick={() =>
@@ -73,6 +96,7 @@ const BuilderView = (): JSX.Element => {
           <pre>{JSON.stringify(appDatas, null, 2)}</pre>
         </Box>
         <AppSettingsDisplay />
+        <AppActionsDisplay />
       </Stack>
     </div>
   );

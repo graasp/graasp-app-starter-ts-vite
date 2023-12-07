@@ -16,7 +16,6 @@ jobs:
         with:
           cypress: true
 
-
       - name: Build App
         run: yarn build:test
         shell: bash
