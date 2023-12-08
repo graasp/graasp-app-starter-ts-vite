@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    concurrency: build-${{ github.head_ref || github.ref }}
+    concurrency: build-${{ github.head_ref || github.ref }}
     runs-on: ubuntu-latest
     steps:
       - name: checkout
