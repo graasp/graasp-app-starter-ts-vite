@@ -1,0 +1,52 @@
+name: Deploy to GitHub Pages
+
+# Controls when the action will run
+on:
+  # Triggers the workflow on repository-dispatch event
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Yarn install and Cache dependencies
+        uses: graasp/graasp-deploy/.github/actions/yarn-install-and-cache@v1
+
+      - name: Yarn build
+        # Set environment variables required to perform the build. These are only available to this step
+        env:
+          VITE_API_HOST: ${{ vars.VITE_API_HOST }}
+          VITE_GRAASP_APP_KEY: ${{ secrets.APP_KEY }}
+          VITE_SENTRY_ENV: production
+          VITE_SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+          VITE_VERSION: github-${{ github.sha }}
+          # add any env variable needed by your app here
+        run: yarn build
+        shell: bash
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./build
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
