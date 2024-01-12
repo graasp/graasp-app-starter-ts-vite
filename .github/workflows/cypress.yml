@@ -5,7 +5,7 @@ on:
 
 jobs:
   cypress-run:
-    concurrency: cypress-${{ github.head_ref || github.ref }}
+    concurrency: cypress-${{ github.head_ref || github.ref }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
