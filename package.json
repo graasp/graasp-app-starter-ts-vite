@@ -53,8 +53,8 @@
     "cov:report": "open ./coverage/lcov-report/index.html"
   },
   "devDependencies": {
-    "@commitlint/cli": "18.4.3",
-    "@commitlint/config-conventional": "18.4.3",
+    "@commitlint/cli": "18.4.4",
+    "@commitlint/config-conventional": "18.4.4",
     "@cypress/code-coverage": "3.12.15",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/i18n": "0.13.10",
