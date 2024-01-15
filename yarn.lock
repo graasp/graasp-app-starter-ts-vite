@@ -1990,9 +1990,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cypress/code-coverage@npm:3.12.15":
-  version: 3.12.15
-  resolution: "@cypress/code-coverage@npm:3.12.15"
+"@cypress/code-coverage@npm:3.12.18":
+  version: 3.12.18
+  resolution: "@cypress/code-coverage@npm:3.12.18"
   dependencies:
     "@cypress/webpack-preprocessor": "npm:^6.0.0"
     chalk: "npm:4.1.2"
@@ -2009,7 +2009,7 @@ __metadata:
     babel-loader: ^8.3 || ^9
     cypress: "*"
     webpack: ^4 || ^5
-  checksum: 7411a3d11a18b5d28ed962792d82b2a573ffd37c0330643f31c94793ac3e6597b50ab93edec2e4cb129fb9ce84e774d762a4f7ca1bc90b3d3abb16fc1291b374
+  checksum: bf18c96cadeee5bcdebb4e6a45c0eea119399f67b1b06eebf6e27fd20e9305e22d87da5447dcf5248f8ae55f6a8c523262711027e77bb014e731de06bf79c6ad
   languageName: node
   linkType: hard
 
@@ -5155,9 +5155,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:13.6.1":
-  version: 13.6.1
-  resolution: "cypress@npm:13.6.1"
+"cypress@npm:13.6.2":
+  version: 13.6.2
+  resolution: "cypress@npm:13.6.2"
   dependencies:
     "@cypress/request": "npm:^3.0.0"
     "@cypress/xvfb": "npm:^1.2.4"
@@ -5204,7 +5204,7 @@ __metadata:
     yauzl: "npm:^2.10.0"
   bin:
     cypress: bin/cypress
-  checksum: 22e3431faf87b31f57a1afbcb92eb8f2bf366468f0a47399545af772a89acc198df2ce80c3d3169e3a82649811ee60685fbd7a512e0ec9ffb9ddbe13f21ecfd0
+  checksum: b6b27f94d98c873cde18a466ab3763e13ee157b78307ae3e3cf93b4fc04cbe1f616c2b7da8cc3354aed1ab2636629ce208533d70bd60cf38ad01675e19e3058d
   languageName: node
   linkType: hard
 
@@ -7037,7 +7037,7 @@ __metadata:
   dependencies:
     "@commitlint/cli": "npm:18.4.4"
     "@commitlint/config-conventional": "npm:18.4.4"
-    "@cypress/code-coverage": "npm:3.12.15"
+    "@cypress/code-coverage": "npm:3.12.18"
     "@emotion/react": "npm:11.11.1"
     "@emotion/styled": "npm:11.11.0"
     "@graasp/apps-query-client": "npm:3.4.1"
@@ -7060,7 +7060,7 @@ __metadata:
     "@vitejs/plugin-react": "npm:^4.2.1"
     axios: "npm:0.27.2"
     concurrently: "npm:8.2.2"
-    cypress: "npm:13.6.1"
+    cypress: "npm:13.6.2"
     env-cmd: "npm:10.1.0"
     eslint: "npm:8.56.0"
     eslint-config-airbnb: "npm:19.0.4"
@@ -11523,8 +11523,8 @@ __metadata:
   linkType: hard
 
 "vite@npm:^5.0.6":
-  version: 5.0.10
-  resolution: "vite@npm:5.0.10"
+  version: 5.0.11
+  resolution: "vite@npm:5.0.11"
   dependencies:
     esbuild: "npm:^0.19.3"
     fsevents: "npm:~2.3.3"
@@ -11558,7 +11558,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 5421e9c7f8cf3152eace9a8b528269141635f367e5dc63c5f1fe2712a766d9757f8197733cf3f28be590afdd520130d38de90c955e6dba6edfa6f9056c1e5ea7
+  checksum: f1a8fea35ed9f162d7a10fd13efb2c96637028b0a319d726aeec8b31e20e4d047272bda5df82167618e7774a520236c66f3093ed172802660aec5227814072f4
   languageName: node
   linkType: hard
 
