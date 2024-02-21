@@ -1,53 +1,42 @@
 import type { Database, LocalContext } from '@graasp/apps-query-client';
 import {
+  AppItemFactory,
   CompleteMember,
   DiscriminatedItem,
   ItemType,
+  MemberFactory,
   PermissionLevel,
 } from '@graasp/sdk';
 
 import { API_HOST } from '@/config/env';
 
+export const mockMembers: CompleteMember[] = [
+  MemberFactory({
+    id: 'd3b90b7d-2bb4-4329-89b3-099bae00d582',
+    name: 'current-member',
+    createdAt: new Date('1996-09-08T19:00:00').toISOString(),
+    updatedAt: new Date().toISOString(),
+  }),
+  MemberFactory({
+    id: 'bab43e0a-3267-4b34-86f1-0ef0c1234d7f',
+    name: 'mock-member-2',
+    createdAt: new Date('1996-09-08T19:00:00').toISOString(),
+    updatedAt: new Date().toISOString(),
+  }),
+];
+
+export const mockItem: DiscriminatedItem = AppItemFactory({
+  name: 'app-starter-ts-vite',
+  extra: { [ItemType.APP]: { url: 'http://localhost:3002' } },
+  creator: mockMembers[0],
+});
+
 export const defaultMockContext: LocalContext = {
   apiHost: API_HOST,
   permission: PermissionLevel.Admin,
   context: 'builder',
-  itemId: '1234-1234-123456-8123-123456',
-  memberId: 'mock-member-id',
-};
-
-export const mockMembers: CompleteMember[] = [
-  {
-    id: defaultMockContext.memberId || '',
-    name: 'current-member',
-    email: '',
-    extra: {},
-    type: 'individual',
-    createdAt: new Date('1996-09-08T19:00:00').toISOString(),
-    updatedAt: new Date().toISOString(),
-  },
-  {
-    id: 'mock-member-id-2',
-    name: 'mock-member-2',
-    email: '',
-    extra: {},
-    type: 'individual',
-    createdAt: new Date('1995-02-02T15:00:00').toISOString(),
-    updatedAt: new Date().toISOString(),
-  },
-];
-
-export const mockItem: DiscriminatedItem = {
-  id: defaultMockContext.itemId,
-  name: 'app-starter-ts-vite',
-  description: null,
-  path: '',
-  settings: {},
-  type: ItemType.APP,
-  extra: { [ItemType.APP]: { url: 'http://localhost:3002' } },
-  creator: mockMembers[0],
-  createdAt: new Date().toISOString(),
-  updatedAt: new Date().toISOString(),
+  itemId: mockItem.id,
+  memberId: mockMembers[0].id,
 };
 
 const buildDatabase = (members?: CompleteMember[]): Database => ({

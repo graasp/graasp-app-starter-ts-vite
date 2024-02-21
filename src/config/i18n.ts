@@ -5,6 +5,7 @@ import i18n from 'i18next';
 import en from '../langs/en.json';
 import fr from '../langs/fr.json';
 
+export const DEFAULT_LANGUAGE = 'en';
 export const defaultNS = 'translations';
 export const resources = {
   en,
@@ -20,7 +21,8 @@ declare module 'react-i18next' {
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: 'en',
+  lng: DEFAULT_LANGUAGE,
+  fallbackLng: DEFAULT_LANGUAGE,
   // debug only when not in production
   debug: import.meta.env.DEV,
   ns: [defaultNS],
