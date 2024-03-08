@@ -2,5 +2,23 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "github>graasp/renovate-config:app"
-  ]
+  ],
+  "assignees": ["swouf"],
+  "reviewers": ["swouf"],
+  "packageRules": [
+    {
+      "matchDepTypes": ["devDependencies"],
+      "matchPackagePatterns": ["lint", "prettier", "vite", "cypress", "commitlint", "axios", "concurrently", "env"],
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["minor","patch"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
+    }
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true
+  }
 }
