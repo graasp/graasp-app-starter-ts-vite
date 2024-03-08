@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.1.1](https://github.com/graasp/graasp-app-starter-ts-vite/compare/v1.1.0...v1.1.1) (2024-03-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @emotion/react to v11.11.4 ([f5f1fd6](https://github.com/graasp/graasp-app-starter-ts-vite/commit/f5f1fd613e54c16c21d6963a12f5266c4599a942))
+* **deps:** update dependency @graasp/apps-query-client to v3.4.8 ([6f6e811](https://github.com/graasp/graasp-app-starter-ts-vite/commit/6f6e811160c11b23f865e8a797a962f6e6e8b85c))
+* **deps:** update dependency @graasp/sdk to v4.1.0 ([#84](https://github.com/graasp/graasp-app-starter-ts-vite/issues/84)) ([e7a4e9f](https://github.com/graasp/graasp-app-starter-ts-vite/commit/e7a4e9f8a76205dd248113ecc5dbf4d1a98ef3cf))
+* **deps:** update dependency @graasp/ui to v4.8.3 ([48ff78a](https://github.com/graasp/graasp-app-starter-ts-vite/commit/48ff78a40a96cdef291893faaa7442e69007946b))
+* **deps:** update dependency @graasp/ui to v4.8.4 ([a0c7e53](https://github.com/graasp/graasp-app-starter-ts-vite/commit/a0c7e533221902c16abd8e357c332c2753876f5c))
+* **deps:** update dependency @graasp/ui to v4.8.5 ([6ed4a29](https://github.com/graasp/graasp-app-starter-ts-vite/commit/6ed4a29d08fdfbaa4ccd067116dc4cd82f6c65e7))
+* **deps:** update dependency @graasp/ui to v4.9.0 ([#85](https://github.com/graasp/graasp-app-starter-ts-vite/issues/85)) ([7ba859f](https://github.com/graasp/graasp-app-starter-ts-vite/commit/7ba859fcfbe5c27b6ae39db5cd6feca9f6c63d7f))
+* **deps:** update dependency @sentry/react to v7.105.0 ([#71](https://github.com/graasp/graasp-app-starter-ts-vite/issues/71)) ([0f11865](https://github.com/graasp/graasp-app-starter-ts-vite/commit/0f11865e5c8d94bf31284486c0e8ec5886b58fa9))
+* **deps:** update dependency @types/node to v20.11.22 ([6d3dee0](https://github.com/graasp/graasp-app-starter-ts-vite/commit/6d3dee0e09eb7635b03b46d3097790aede8d33bf))
+* **deps:** update dependency @types/node to v20.11.24 ([decfd2b](https://github.com/graasp/graasp-app-starter-ts-vite/commit/decfd2b56e681bf6b4c28b529f2c3aba623df20a))
+* **deps:** update dependency @types/node to v20.11.25 ([e1c22d4](https://github.com/graasp/graasp-app-starter-ts-vite/commit/e1c22d49f6dc24574009379ec7c8aeee38dbe676))
+* **deps:** update dependency @types/react to v18.2.60 ([a2c696c](https://github.com/graasp/graasp-app-starter-ts-vite/commit/a2c696cb8fb43e19784ed0970c682bb5bec2446c))
+* **deps:** update dependency @types/react to v18.2.61 ([afc4afb](https://github.com/graasp/graasp-app-starter-ts-vite/commit/afc4afbb7d8ac58d316608b2b77c39d8c6df2fcb))
+* **deps:** update dependency i18next to v23.10.1 ([#95](https://github.com/graasp/graasp-app-starter-ts-vite/issues/95)) ([3624b78](https://github.com/graasp/graasp-app-starter-ts-vite/commit/3624b7825ec5faddaaf4b49f8a4f504319016674))
+* **deps:** update dependency react-i18next to v14.0.8 ([14e4029](https://github.com/graasp/graasp-app-starter-ts-vite/commit/14e40290fd0121a49922607bf004a3c2e88752fa))
+* **deps:** update dependency react-i18next to v14.1.0 ([#94](https://github.com/graasp/graasp-app-starter-ts-vite/issues/94)) ([6a7aed5](https://github.com/graasp/graasp-app-starter-ts-vite/commit/6a7aed5ea0f0092af7ae31690c374a63d4d7ed19))
+* **deps:** update dependency typescript to v5.4.2 ([#93](https://github.com/graasp/graasp-app-starter-ts-vite/issues/93)) ([f1f5411](https://github.com/graasp/graasp-app-starter-ts-vite/commit/f1f54112297a5d12d869babfd12bdd568588783e))
+* **deps:** update mui (non-major) ([d108021](https://github.com/graasp/graasp-app-starter-ts-vite/commit/d108021532ead9cb712cee2d443619a885be8c3d))
+* **deps:** update react monorepo ([f2c4826](https://github.com/graasp/graasp-app-starter-ts-vite/commit/f2c4826557ad44c017471d73e657ef99de372222))
+
 ## [1.1.0](https://github.com/graasp/graasp-app-starter-ts-vite/compare/v1.0.0...v1.1.0) (2024-02-27)
 
 
