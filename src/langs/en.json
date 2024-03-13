@@ -1,5 +1,20 @@
 {
   "translations": {
-    "Welcome to the Graasp App Starter Kit": "Welcome to the Graasp App Starter Kit"
+    "Welcome to the Graasp App Starter Kit": "Welcome to the Graasp App Starter Kit",
+    "ERROR_BOUNDARY": {
+      "FALLBACK": {
+        "MESSAGE_TITLE": "Sorry, something went wrong with this application",
+        "MESSAGE_FEEDBACK": "Our team has been notified. If you would like to help, please, tell us what happened below.",
+        "ERROR_DETAILS": "Details of the error",
+        "NAME_LABEL": "Name",
+        "NAME_HELPER": "Provide your name (optional)",
+        "EMAIL_LABEL": "Email",
+        "EMAIL_HELPER": "Provide your email (optional)",
+        "COMMENT_LABEL": "Comment",
+        "COMMENT_HELPER": "Tell us what happened (optional)",
+        "THANKS_FOR_FEEDBACK": "Thank you for your feedback!",
+        "SEND": "Send your feedback"
+      }
+    }
   }
 }
