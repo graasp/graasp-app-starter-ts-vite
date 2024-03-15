@@ -24,6 +24,7 @@ import { defaultMockContext, mockMembers } from '@/mocks/db';
 import Loader from '@/modules/common/Loader';
 import { useObjectState } from '@/utils/hooks';
 
+import ErrorBoundary from './ErrorBoundary';
 import App from './main/App';
 
 // declare the module to enable theme modification
@@ -80,42 +81,46 @@ const Root: FC = () => {
         <ThemeProvider theme={theme}>
           <CssBaseline enableColorScheme />
           <I18nextProvider i18n={i18nConfig}>
-            <QueryClientProvider client={queryClient}>
-              <ToastContainer />
-              <WithLocalContext
-                defaultValue={window.Cypress ? window.appContext : mockContext}
-                LoadingComponent={<Loader />}
-                useGetLocalContext={hooks.useGetLocalContext}
-                useAutoResize={hooks.useAutoResize}
-                onError={() => {
-                  console.error(
-                    'An error occurred while fetching the context.',
-                  );
-                }}
-              >
-                <WithTokenContext
+            <ErrorBoundary>
+              <QueryClientProvider client={queryClient}>
+                <ToastContainer />
+                <WithLocalContext
+                  defaultValue={
+                    window.Cypress ? window.appContext : mockContext
+                  }
                   LoadingComponent={<Loader />}
-                  useAuthToken={hooks.useAuthToken}
+                  useGetLocalContext={hooks.useGetLocalContext}
+                  useAutoResize={hooks.useAutoResize}
                   onError={() => {
                     console.error(
-                      'An error occurred while requesting the token.',
+                      'An error occurred while fetching the context.',
                     );
                   }}
                 >
-                  <App />
-                  {import.meta.env.DEV && (
-                    <GraaspContextDevTool
-                      members={mockMembers}
-                      context={mockContext}
-                      setContext={setMockContext}
-                    />
-                  )}
-                </WithTokenContext>
-              </WithLocalContext>
-              {import.meta.env.DEV && (
-                <ReactQueryDevtools position="bottom-left" />
-              )}
-            </QueryClientProvider>
+                  <WithTokenContext
+                    LoadingComponent={<Loader />}
+                    useAuthToken={hooks.useAuthToken}
+                    onError={() => {
+                      console.error(
+                        'An error occurred while requesting the token.',
+                      );
+                    }}
+                  >
+                    <App />
+                    {import.meta.env.DEV && (
+                      <GraaspContextDevTool
+                        members={mockMembers}
+                        context={mockContext}
+                        setContext={setMockContext}
+                      />
+                    )}
+                  </WithTokenContext>
+                </WithLocalContext>
+                {import.meta.env.DEV && (
+                  <ReactQueryDevtools position="bottom-left" />
+                )}
+              </QueryClientProvider>
+            </ErrorBoundary>
           </I18nextProvider>
         </ThemeProvider>
       </StyledEngineProvider>
