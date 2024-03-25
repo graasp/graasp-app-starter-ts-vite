@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.2.1](https://github.com/graasp/graasp-app-starter-ts-vite/compare/v1.2.0...v1.2.1) (2024-03-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @graasp/sdk to v4.2.1 ([#122](https://github.com/graasp/graasp-app-starter-ts-vite/issues/122)) ([36b11c8](https://github.com/graasp/graasp-app-starter-ts-vite/commit/36b11c89a1c5fc073ceed9bb37e604db3785c3be))
+* **deps:** update dependency @graasp/sdk to v4.3.1 ([#138](https://github.com/graasp/graasp-app-starter-ts-vite/issues/138)) ([138b04b](https://github.com/graasp/graasp-app-starter-ts-vite/commit/138b04bf660e59fc5fad9d8fccac373e21f964e8))
+* **deps:** update dependency @sentry/react to v7.108.0 ([#132](https://github.com/graasp/graasp-app-starter-ts-vite/issues/132)) ([a705f05](https://github.com/graasp/graasp-app-starter-ts-vite/commit/a705f05a9ac4c1ec84ee5225205d3508fd665f55))
+* **deps:** update dependency @types/node to v20.11.30 ([#126](https://github.com/graasp/graasp-app-starter-ts-vite/issues/126)) ([c6b7f49](https://github.com/graasp/graasp-app-starter-ts-vite/commit/c6b7f49c7692ac8c74b9ddebc916abd0cd64963f))
+* **deps:** update dependency @types/react to v18.2.67 ([#123](https://github.com/graasp/graasp-app-starter-ts-vite/issues/123)) ([c1d7125](https://github.com/graasp/graasp-app-starter-ts-vite/commit/c1d7125eca6da73c12758dbef9ce1bdd0a8a12cc))
+* **deps:** update dependency @types/react to v18.2.69 ([#133](https://github.com/graasp/graasp-app-starter-ts-vite/issues/133)) ([4ea7015](https://github.com/graasp/graasp-app-starter-ts-vite/commit/4ea7015600102b758615eb4db2948d7c22f8645c))
+* **deps:** update dependency @types/react to v18.2.70 ([#137](https://github.com/graasp/graasp-app-starter-ts-vite/issues/137)) ([55fd6cf](https://github.com/graasp/graasp-app-starter-ts-vite/commit/55fd6cfa749519884bef91a5eb2cb2fa000e159e))
+* **deps:** update dependency typescript to v5.4.3 ([#130](https://github.com/graasp/graasp-app-starter-ts-vite/issues/130)) ([7813194](https://github.com/graasp/graasp-app-starter-ts-vite/commit/7813194cbf2c4c2477890f00cf07b47006b85b71))
+* **deps:** update mui (non-major) ([#128](https://github.com/graasp/graasp-app-starter-ts-vite/issues/128)) ([e3f94d0](https://github.com/graasp/graasp-app-starter-ts-vite/commit/e3f94d0e3aadb78809fd2e847e80a1d7123bb0d4))
+
 ## [1.2.0](https://github.com/graasp/graasp-app-starter-ts-vite/compare/v1.1.1...v1.2.0) (2024-03-15)
 
 
