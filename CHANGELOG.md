@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.2.1](https://github.com/graasp/graasp-app-starter-ts-vite/compare/v1.2.0...v1.2.1) (2024-03-30)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @emotion/styled to v11.11.5 ([#145](https://github.com/graasp/graasp-app-starter-ts-vite/issues/145)) ([6ecd9f4](https://github.com/graasp/graasp-app-starter-ts-vite/commit/6ecd9f404ede723db5994cfaa10e4d186aa4f088))
+* **deps:** update dependency @graasp/apps-query-client to v3.4.9 ([#135](https://github.com/graasp/graasp-app-starter-ts-vite/issues/135)) ([8927643](https://github.com/graasp/graasp-app-starter-ts-vite/commit/89276431dbb2e9c71cca925591a4a42bb4a6fdea))
+* **deps:** update dependency @graasp/sdk to v4.2.1 ([#122](https://github.com/graasp/graasp-app-starter-ts-vite/issues/122)) ([36b11c8](https://github.com/graasp/graasp-app-starter-ts-vite/commit/36b11c89a1c5fc073ceed9bb37e604db3785c3be))
+* **deps:** update dependency @graasp/sdk to v4.3.1 ([#138](https://github.com/graasp/graasp-app-starter-ts-vite/issues/138)) ([138b04b](https://github.com/graasp/graasp-app-starter-ts-vite/commit/138b04bf660e59fc5fad9d8fccac373e21f964e8))
+* **deps:** update dependency @graasp/sdk to v4.4.0 ([#142](https://github.com/graasp/graasp-app-starter-ts-vite/issues/142)) ([87edbda](https://github.com/graasp/graasp-app-starter-ts-vite/commit/87edbdad8e3480eab525895dcb98c3825a71901e))
+* **deps:** update dependency @graasp/ui to v4.12.1 ([#136](https://github.com/graasp/graasp-app-starter-ts-vite/issues/136)) ([f3a83fe](https://github.com/graasp/graasp-app-starter-ts-vite/commit/f3a83fedeae70e6d0fae4efa6687778ec2e0f1cc))
+* **deps:** update dependency @sentry/react to v7.108.0 ([#132](https://github.com/graasp/graasp-app-starter-ts-vite/issues/132)) ([a705f05](https://github.com/graasp/graasp-app-starter-ts-vite/commit/a705f05a9ac4c1ec84ee5225205d3508fd665f55))
+* **deps:** update dependency @sentry/react to v7.109.0 ([#143](https://github.com/graasp/graasp-app-starter-ts-vite/issues/143)) ([607756c](https://github.com/graasp/graasp-app-starter-ts-vite/commit/607756ced47e5bd7bfc628ee85d6c4c8e082830b))
+* **deps:** update dependency @types/node to v20.11.30 ([#126](https://github.com/graasp/graasp-app-starter-ts-vite/issues/126)) ([c6b7f49](https://github.com/graasp/graasp-app-starter-ts-vite/commit/c6b7f49c7692ac8c74b9ddebc916abd0cd64963f))
+* **deps:** update dependency @types/node to v20.12.2 ([#146](https://github.com/graasp/graasp-app-starter-ts-vite/issues/146)) ([d980f08](https://github.com/graasp/graasp-app-starter-ts-vite/commit/d980f088b2696318af4ed2dea97a8a7f5446a634))
+* **deps:** update dependency @types/react to v18.2.67 ([#123](https://github.com/graasp/graasp-app-starter-ts-vite/issues/123)) ([c1d7125](https://github.com/graasp/graasp-app-starter-ts-vite/commit/c1d7125eca6da73c12758dbef9ce1bdd0a8a12cc))
+* **deps:** update dependency @types/react to v18.2.69 ([#133](https://github.com/graasp/graasp-app-starter-ts-vite/issues/133)) ([4ea7015](https://github.com/graasp/graasp-app-starter-ts-vite/commit/4ea7015600102b758615eb4db2948d7c22f8645c))
+* **deps:** update dependency @types/react to v18.2.70 ([#137](https://github.com/graasp/graasp-app-starter-ts-vite/issues/137)) ([55fd6cf](https://github.com/graasp/graasp-app-starter-ts-vite/commit/55fd6cfa749519884bef91a5eb2cb2fa000e159e))
+* **deps:** update dependency typescript to v5.4.3 ([#130](https://github.com/graasp/graasp-app-starter-ts-vite/issues/130)) ([7813194](https://github.com/graasp/graasp-app-starter-ts-vite/commit/7813194cbf2c4c2477890f00cf07b47006b85b71))
+* **deps:** update mui (non-major) ([#128](https://github.com/graasp/graasp-app-starter-ts-vite/issues/128)) ([e3f94d0](https://github.com/graasp/graasp-app-starter-ts-vite/commit/e3f94d0e3aadb78809fd2e847e80a1d7123bb0d4))
+* **deps:** update react monorepo ([#141](https://github.com/graasp/graasp-app-starter-ts-vite/issues/141)) ([58a082f](https://github.com/graasp/graasp-app-starter-ts-vite/commit/58a082f63205188c4341cf42798585af5eb46cd4))
+
 ## [1.2.0](https://github.com/graasp/graasp-app-starter-ts-vite/compare/v1.1.1...v1.2.0) (2024-03-15)
 
 
