@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.2.2](https://github.com/graasp/graasp-app-starter-ts-vite/compare/v1.2.1...v1.2.2) (2024-04-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @graasp/apps-query-client to v3.4.10 ([#154](https://github.com/graasp/graasp-app-starter-ts-vite/issues/154)) ([4fdf503](https://github.com/graasp/graasp-app-starter-ts-vite/commit/4fdf503aa2804c1cc9c0ff2ef7718c8f1f854785))
+* **deps:** update dependency @graasp/sdk to v4.5.0 ([#155](https://github.com/graasp/graasp-app-starter-ts-vite/issues/155)) ([fdc0090](https://github.com/graasp/graasp-app-starter-ts-vite/commit/fdc00900524ec768cc480267da58dcf9902b8e6b))
+* **deps:** update dependency @graasp/ui to v4.13.0 ([#151](https://github.com/graasp/graasp-app-starter-ts-vite/issues/151)) ([95947aa](https://github.com/graasp/graasp-app-starter-ts-vite/commit/95947aa1d65d87547e523924e5ceacd16f7d3f84))
+* **deps:** update dependency @types/node to v20.12.3 ([#153](https://github.com/graasp/graasp-app-starter-ts-vite/issues/153)) ([f447fd6](https://github.com/graasp/graasp-app-starter-ts-vite/commit/f447fd6ba361507250c676731b8439a8d9509aeb))
+* **deps:** update dependency @types/react to v18.2.74 ([#150](https://github.com/graasp/graasp-app-starter-ts-vite/issues/150)) ([cc2f413](https://github.com/graasp/graasp-app-starter-ts-vite/commit/cc2f413252eabea0aa12244cf1816ecb74dc9064))
+
 ## [1.2.1](https://github.com/graasp/graasp-app-starter-ts-vite/compare/v1.2.0...v1.2.1) (2024-03-30)
 
 
