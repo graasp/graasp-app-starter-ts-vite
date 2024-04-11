@@ -21,7 +21,7 @@
     "@sentry/react": "7.109.0",
     "@tanstack/react-query": "^4.36.1",
     "@tanstack/react-query-devtools": "^4.36.1",
-    "@types/node": "20.12.3",
+    "@types/node": "20.12.7",
     "@types/react": "18.2.75",
     "@types/react-dom": "18.2.24",
     "i18next": "^23.9.0",
