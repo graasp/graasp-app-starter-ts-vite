@@ -1718,12 +1718,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:19.2.1":
-  version: 19.2.1
-  resolution: "@commitlint/cli@npm:19.2.1"
+"@commitlint/cli@npm:19.2.2":
+  version: 19.2.2
+  resolution: "@commitlint/cli@npm:19.2.2"
   dependencies:
     "@commitlint/format": "npm:^19.0.3"
-    "@commitlint/lint": "npm:^19.1.0"
+    "@commitlint/lint": "npm:^19.2.2"
     "@commitlint/load": "npm:^19.2.0"
     "@commitlint/read": "npm:^19.2.1"
     "@commitlint/types": "npm:^19.0.3"
@@ -1731,7 +1731,7 @@ __metadata:
     yargs: "npm:^17.0.0"
   bin:
     commitlint: cli.js
-  checksum: 10/6d3555039c96e21664d5159b06317558d31ca150f3326a2bd75aa82335032956c8f09481bf30b3aa3a2f8a2037b0a8e1947a787d57f4cb2007e3f69814e9c31f
+  checksum: 10/bff139177aecffe809ec8665a7ffd3f9acae144ec8634b6ed93802ae9a3333bc978f69ba26dacd2bbc0e06e3dada8ca49fe49bd5316c916e626f8df8dcc03dc9
   languageName: node
   linkType: hard
 
@@ -1796,7 +1796,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/lint@npm:^19.1.0":
+"@commitlint/lint@npm:^19.2.2":
   version: 19.2.2
   resolution: "@commitlint/lint@npm:19.2.2"
   dependencies:
@@ -7895,7 +7895,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "graasp-app-starter-ts-vite@workspace:."
   dependencies:
-    "@commitlint/cli": "npm:19.2.1"
+    "@commitlint/cli": "npm:19.2.2"
     "@commitlint/config-conventional": "npm:19.1.0"
     "@cypress/code-coverage": "npm:3.12.36"
     "@emotion/react": "npm:11.11.4"
