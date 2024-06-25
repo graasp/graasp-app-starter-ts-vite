@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.6](https://github.com/graasp/graasp-app-starter-ts-vite/compare/v1.2.5...v1.2.6) (2024-06-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/node to v20.12.14 ([#220](https://github.com/graasp/graasp-app-starter-ts-vite/issues/220)) ([3e68ac6](https://github.com/graasp/graasp-app-starter-ts-vite/commit/3e68ac6e496820bfb7c8e223caca124d3394442f))
+* use test env when using cypress ([#230](https://github.com/graasp/graasp-app-starter-ts-vite/issues/230)) ([e87eca6](https://github.com/graasp/graasp-app-starter-ts-vite/commit/e87eca60d751be209a6ae86f4278a1457e417fff))
+
 ## [1.2.5](https://github.com/graasp/graasp-app-starter-ts-vite/compare/v1.2.4...v1.2.5) (2024-05-13)
 
 
