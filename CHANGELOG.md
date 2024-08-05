@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.6](https://github.com/graasp/graasp-app-starter-ts-vite/compare/v1.2.5...v1.2.6) (2024-08-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @graasp/apps-query-client to v3.4.15 ([#229](https://github.com/graasp/graasp-app-starter-ts-vite/issues/229)) ([34e841a](https://github.com/graasp/graasp-app-starter-ts-vite/commit/34e841a621c786416ab74d54f549183150afa5e9))
+* **deps:** update dependency @sentry/react to v7.118.0 ([#224](https://github.com/graasp/graasp-app-starter-ts-vite/issues/224)) ([520a476](https://github.com/graasp/graasp-app-starter-ts-vite/commit/520a476de97fe0fb3242d3b85f4da62346dbfb49))
+* **deps:** update dependency @types/node to v20.12.14 ([#220](https://github.com/graasp/graasp-app-starter-ts-vite/issues/220)) ([3e68ac6](https://github.com/graasp/graasp-app-starter-ts-vite/commit/3e68ac6e496820bfb7c8e223caca124d3394442f))
+* **deps:** update dependency @types/react to v18.3.3 ([#232](https://github.com/graasp/graasp-app-starter-ts-vite/issues/232)) ([0487611](https://github.com/graasp/graasp-app-starter-ts-vite/commit/0487611212d1eeae3427f01d36f09889fba9248b))
+* **deps:** update dependency react-i18next to v14.1.3 ([#234](https://github.com/graasp/graasp-app-starter-ts-vite/issues/234)) ([8904f01](https://github.com/graasp/graasp-app-starter-ts-vite/commit/8904f014b7062cb2b89ed747f81fec1afc726cff))
+* **deps:** update mui (non-major) ([#223](https://github.com/graasp/graasp-app-starter-ts-vite/issues/223)) ([ca720c0](https://github.com/graasp/graasp-app-starter-ts-vite/commit/ca720c0b32c9fb15561e15552b6aa0f58e5435c9))
+* use test env when using cypress ([#230](https://github.com/graasp/graasp-app-starter-ts-vite/issues/230)) ([e87eca6](https://github.com/graasp/graasp-app-starter-ts-vite/commit/e87eca60d751be209a6ae86f4278a1457e417fff))
+
 ## [1.2.5](https://github.com/graasp/graasp-app-starter-ts-vite/compare/v1.2.4...v1.2.5) (2024-05-13)
 
 
