@@ -4002,12 +4002,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.12.14":
-  version: 20.12.14
-  resolution: "@types/node@npm:20.12.14"
+"@types/node@npm:20.16.9":
+  version: 20.16.9
+  resolution: "@types/node@npm:20.16.9"
   dependencies:
-    undici-types: "npm:~5.26.4"
-  checksum: 10/8ce987f0b7e15116e92894c51ee53fe0cbd98dafb5693a2e7d490f16396552528114d055ca1b144d3fdc5ba7d5f5ce28ad091a693c24337615f047cefc3faa36
+    undici-types: "npm:~6.19.2"
+  checksum: 10/cc7e57775ce80348f72a7026910ee0082bf3e0f5af33b3cdc3ce10df64e51bb70b0e8ce4726ecf53cc9c4ba239d340d76831de38ecc7e317e41fb71f793b6e93
   languageName: node
   linkType: hard
 
@@ -8021,7 +8021,7 @@ __metadata:
     "@tanstack/react-query-devtools": "npm:^4.36.1"
     "@trivago/prettier-plugin-sort-imports": "npm:^4.3.0"
     "@types/i18n": "npm:0.13.12"
-    "@types/node": "npm:20.12.14"
+    "@types/node": "npm:20.16.9"
     "@types/react": "npm:18.3.3"
     "@types/react-dom": "npm:18.3.0"
     "@types/uuid": "npm:9.0.8"
@@ -12470,6 +12470,13 @@ __metadata:
   version: 6.13.0
   resolution: "undici-types@npm:6.13.0"
   checksum: 10/da52e37cbc6da3a75da86fa08dd795ca8924430deb91005eb884b840e46e19013ccd4c1c289f70018e8cf0c338add24a500e7c3acfcd49b1ffb27ff9f91e38b9
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~6.19.2":
+  version: 6.19.8
+  resolution: "undici-types@npm:6.19.8"
+  checksum: 10/cf0b48ed4fc99baf56584afa91aaffa5010c268b8842f62e02f752df209e3dea138b372a60a963b3b2576ed932f32329ce7ddb9cb5f27a6c83040d8cd74b7a70
   languageName: node
   linkType: hard
 
