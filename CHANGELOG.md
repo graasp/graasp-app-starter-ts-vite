@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.7](https://github.com/graasp/graasp-app-starter-ts-vite/compare/v1.2.6...v1.2.7) (2024-09-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @sentry/react to v7.119.0 ([#252](https://github.com/graasp/graasp-app-starter-ts-vite/issues/252)) ([dd3cdfa](https://github.com/graasp/graasp-app-starter-ts-vite/commit/dd3cdfabecaccc19a5d282c1fe055b0512b96e3c))
+* **deps:** update dependency @types/node to v20.16.9 ([#239](https://github.com/graasp/graasp-app-starter-ts-vite/issues/239)) ([9254dec](https://github.com/graasp/graasp-app-starter-ts-vite/commit/9254dec12232aee2b5be8f952cbcf2c584ea91ba))
+* **deps:** update dependency @types/react to v18.3.9 ([#247](https://github.com/graasp/graasp-app-starter-ts-vite/issues/247)) ([c5f780a](https://github.com/graasp/graasp-app-starter-ts-vite/commit/c5f780a1bed10ec064bc65b7c70121089f9bfff8))
+* **deps:** update dependency i18next to v23.12.7 ([#249](https://github.com/graasp/graasp-app-starter-ts-vite/issues/249)) ([6c7a240](https://github.com/graasp/graasp-app-starter-ts-vite/commit/6c7a240b61f0d49a44e191c9fb32289eba170385))
+* **deps:** update dependency typescript to v5.6.2 ([#240](https://github.com/graasp/graasp-app-starter-ts-vite/issues/240)) ([9ff6d7f](https://github.com/graasp/graasp-app-starter-ts-vite/commit/9ff6d7fb4defaaf09df408a511cc50f76d5c4f21))
+* **deps:** update emotion monorepo ([#241](https://github.com/graasp/graasp-app-starter-ts-vite/issues/241)) ([d8d7bfa](https://github.com/graasp/graasp-app-starter-ts-vite/commit/d8d7bfa5abc1623987480d7269f052d92b896d5d))
+* **deps:** update mui (non-major) to v5.16.7 ([#243](https://github.com/graasp/graasp-app-starter-ts-vite/issues/243)) ([ff94895](https://github.com/graasp/graasp-app-starter-ts-vite/commit/ff94895d20bfe139571ec6a2189ba3293f6732e1))
+
 ## [1.2.6](https://github.com/graasp/graasp-app-starter-ts-vite/compare/v1.2.5...v1.2.6) (2024-08-05)
 
 
