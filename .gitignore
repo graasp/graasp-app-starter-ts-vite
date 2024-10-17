@@ -34,7 +34,8 @@ yarn-debug.log*
 
 # editor files
 /.idea
-/.vscode
+.vscode/*
+!.vscode/settings.json
 
 # cypress
 cypress/screenshots/

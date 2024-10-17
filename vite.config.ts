@@ -37,6 +37,7 @@ export default ({ mode }: { mode: string }): UserConfigExport => {
             typescript: true,
             eslint: {
               lintCommand: 'eslint "src/**/*.{ts,tsx}"',
+              useFlatConfig: true,
             },
           }),
       react(),
