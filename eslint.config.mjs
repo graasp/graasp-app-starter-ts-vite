@@ -75,6 +75,9 @@ export default [
     },
 
     settings: {
+      react: {
+        version: 'detect',
+      },
       'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
 
       'import/parsers': {

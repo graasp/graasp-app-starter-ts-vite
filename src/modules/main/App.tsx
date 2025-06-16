@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useLocalContext } from '@graasp/apps-query-client';
 import { Context } from '@graasp/sdk';
 
-import i18n, { DEFAULT_LANGUAGE } from '../../config/i18n';
+import { DEFAULT_LANGUAGE } from '../../config/i18n';
 import { SettingsProvider } from '../context/SettingsContext';
 import AnalyticsView from './AnalyticsView';
 import BuilderView from './BuilderView';
@@ -11,7 +12,7 @@ import PlayerView from './PlayerView';
 
 const App = (): JSX.Element => {
   const context = useLocalContext();
-
+  const { i18n } = useTranslation();
   useEffect(() => {
     // handle a change of language
     const lang = context?.lang ?? DEFAULT_LANGUAGE;

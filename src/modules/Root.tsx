@@ -1,5 +1,4 @@
-import { FC } from 'react';
-import { I18nextProvider } from 'react-i18next';
+import type { JSX } from 'react';
 import { ToastContainer } from 'react-toastify';
 
 import { CssBaseline, ThemeProvider, createTheme, styled } from '@mui/material';
@@ -12,7 +11,6 @@ import {
   WithTokenContext,
 } from '@graasp/apps-query-client';
 
-import i18nConfig from '@/config/i18n';
 import {
   QueryClientProvider,
   ReactQueryDevtools,
@@ -71,7 +69,7 @@ const RootDiv = styled('div')({
   height: '100%',
 });
 
-const Root: FC = () => {
+const Root = (): JSX.Element => {
   const [mockContext, setMockContext] = useObjectState(defaultMockContext);
 
   return (
@@ -80,48 +78,44 @@ const Root: FC = () => {
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={theme}>
           <CssBaseline enableColorScheme />
-          <I18nextProvider i18n={i18nConfig}>
-            <ErrorBoundary>
-              <QueryClientProvider client={queryClient}>
-                <ToastContainer />
-                <WithLocalContext
-                  defaultValue={
-                    window.Cypress ? window.appContext : mockContext
-                  }
+          <ErrorBoundary>
+            <QueryClientProvider client={queryClient}>
+              <ToastContainer />
+              <WithLocalContext
+                defaultValue={window.Cypress ? window.appContext : mockContext}
+                LoadingComponent={<Loader />}
+                useGetLocalContext={hooks.useGetLocalContext}
+                useAutoResize={hooks.useAutoResize}
+                onError={() => {
+                  console.error(
+                    'An error occurred while fetching the context.',
+                  );
+                }}
+              >
+                <WithTokenContext
                   LoadingComponent={<Loader />}
-                  useGetLocalContext={hooks.useGetLocalContext}
-                  useAutoResize={hooks.useAutoResize}
+                  useAuthToken={hooks.useAuthToken}
                   onError={() => {
                     console.error(
-                      'An error occurred while fetching the context.',
+                      'An error occurred while requesting the token.',
                     );
                   }}
                 >
-                  <WithTokenContext
-                    LoadingComponent={<Loader />}
-                    useAuthToken={hooks.useAuthToken}
-                    onError={() => {
-                      console.error(
-                        'An error occurred while requesting the token.',
-                      );
-                    }}
-                  >
-                    <App />
-                    {import.meta.env.DEV && (
-                      <GraaspContextDevTool
-                        members={mockMembers}
-                        context={mockContext}
-                        setContext={setMockContext}
-                      />
-                    )}
-                  </WithTokenContext>
-                </WithLocalContext>
-                {import.meta.env.DEV && (
-                  <ReactQueryDevtools position="bottom-left" />
-                )}
-              </QueryClientProvider>
-            </ErrorBoundary>
-          </I18nextProvider>
+                  <App />
+                  {import.meta.env.DEV && (
+                    <GraaspContextDevTool
+                      members={mockMembers}
+                      context={mockContext}
+                      setContext={setMockContext}
+                    />
+                  )}
+                </WithTokenContext>
+              </WithLocalContext>
+              {import.meta.env.DEV && (
+                <ReactQueryDevtools position="bottom-left" />
+              )}
+            </QueryClientProvider>
+          </ErrorBoundary>
         </ThemeProvider>
       </StyledEngineProvider>
     </RootDiv>

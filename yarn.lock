@@ -1390,7 +1390,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.26.0, @babel/runtime@npm:^7.27.1, @babel/runtime@npm:^7.27.6, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.23.2, @babel/runtime@npm:^7.26.0, @babel/runtime@npm:^7.27.1, @babel/runtime@npm:^7.27.6, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
   version: 7.27.6
   resolution: "@babel/runtime@npm:7.27.6"
   checksum: 10/cc957a12ba3781241b83d528eb69ddeb86ca5ac43179a825e83aa81263a6b3eb88c57bed8a937cdeacfc3192e07ec24c73acdfea4507d0c0428c8e23d6322bfe
@@ -6780,6 +6780,8 @@ __metadata:
     globals: "npm:^16.2.0"
     husky: "npm:9.1.7"
     i18next: "npm:^25.2.1"
+    i18next-browser-languagedetector: "npm:8.2.0"
+    i18next-fetch-backend: "npm:6.0.0"
     miragejs: "npm:^0.1.48"
     nock: "npm:^13.5.6"
     nyc: "npm:17.1.0"
@@ -6974,6 +6976,22 @@ __metadata:
   bin:
     husky: bin.js
   checksum: 10/c2412753f15695db369634ba70f50f5c0b7e5cb13b673d0826c411ec1bd9ddef08c1dad89ea154f57da2521d2605bd64308af748749b27d08c5f563bcd89975f
+  languageName: node
+  linkType: hard
+
+"i18next-browser-languagedetector@npm:8.2.0":
+  version: 8.2.0
+  resolution: "i18next-browser-languagedetector@npm:8.2.0"
+  dependencies:
+    "@babel/runtime": "npm:^7.23.2"
+  checksum: 10/b2e78feb256e92b219cd378b38af00404b8f667473f886d64c53588df0592bce145ad29ad7d8238c75f78a9c79f02c84d400569dd5c0ab94c751ac62a4e1f8dd
+  languageName: node
+  linkType: hard
+
+"i18next-fetch-backend@npm:6.0.0":
+  version: 6.0.0
+  resolution: "i18next-fetch-backend@npm:6.0.0"
+  checksum: 10/9518723a908201e436203c29e5d433d76dd01c14d075ce48908c28f0695ccc8c1d182cc216cf55c65aecc3e479e3dfaafc80c899adf933e619afa0a304524e87
   languageName: node
   linkType: hard
 
