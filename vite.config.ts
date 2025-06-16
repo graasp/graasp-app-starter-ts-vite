@@ -2,7 +2,7 @@
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 import { UserConfigExport, defineConfig, loadEnv } from 'vite';
-import checker from 'vite-plugin-checker';
+import { checker } from 'vite-plugin-checker';
 import istanbul from 'vite-plugin-istanbul';
 
 // https://vitejs.dev/config/

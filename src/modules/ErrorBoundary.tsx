@@ -11,13 +11,12 @@ const ErrorBoundary: FC<{ children?: ReactNode }> = ({ children }) => {
   });
   return (
     <Sentry.ErrorBoundary
-      // eslint-disable-next-line react/no-unstable-nested-components
       fallback={({ error, componentStack, eventId }) => (
         <ErrorFallback
           error={error}
           componentStack={componentStack}
           eventId={eventId}
-          captureUserFeedback={Sentry.captureUserFeedback}
+          captureFeedback={Sentry.captureFeedback}
           title={tFallback('MESSAGE_TITLE')}
           formTitle={tFallback('MESSAGE_FEEDBACK')}
           nameLabel={tFallback('NAME_LABEL')}

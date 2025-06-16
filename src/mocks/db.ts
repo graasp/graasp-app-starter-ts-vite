@@ -1,9 +1,10 @@
-import type { Database, LocalContext } from '@graasp/apps-query-client';
+import type { Database } from '@graasp/apps-query-client';
 import {
   AppItemFactory,
   CompleteMember,
   DiscriminatedItem,
   ItemType,
+  LocalContext,
   MemberFactory,
   PermissionLevel,
 } from '@graasp/sdk';
@@ -37,7 +38,7 @@ export const defaultMockContext: LocalContext = {
   permission: PermissionLevel.Admin,
   context: 'builder',
   itemId: mockItem.id,
-  memberId: mockMembers[0].id,
+  accountId: mockMembers[0].id,
 };
 
 const buildDatabase = (members?: CompleteMember[]): Database => ({
@@ -46,7 +47,7 @@ const buildDatabase = (members?: CompleteMember[]): Database => ({
     {
       id: 'cecc1671-6c9d-4604-a3a2-6d7fad4a5996',
       type: 'admin-action',
-      member: mockMembers[0],
+      account: mockMembers[0],
       createdAt: new Date().toISOString(),
       item: mockItem,
       data: { content: 'hello' },
@@ -54,7 +55,7 @@ const buildDatabase = (members?: CompleteMember[]): Database => ({
     {
       id: '0c11a63a-f333-47e1-8572-b8f99fe883b0',
       type: 'other-action',
-      member: mockMembers[1],
+      account: mockMembers[1],
       createdAt: new Date().toISOString(),
       item: mockItem,
       data: { content: 'other member' },
@@ -63,6 +64,7 @@ const buildDatabase = (members?: CompleteMember[]): Database => ({
   members: members ?? mockMembers,
   appSettings: [],
   items: [mockItem],
+  uploadedFiles: [],
 });
 
 export default buildDatabase;

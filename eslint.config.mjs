@@ -3,15 +3,14 @@ import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 import typescriptEslint from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
+import cypressEslint from 'eslint-plugin-cypress';
 import prettier from 'eslint-plugin-prettier';
 import reactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-// eslint-disable-next-line no-underscore-dangle, @typescript-eslint/naming-convention
 const __filename = fileURLToPath(import.meta.url);
-// eslint-disable-next-line no-underscore-dangle, @typescript-eslint/naming-convention
 const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
   baseDirectory: __dirname,
@@ -35,11 +34,10 @@ export default [
   },
   ...fixupConfigRules(
     compat.extends(
-      'airbnb',
-      'airbnb-typescript',
       'plugin:import/typescript',
       'prettier',
-      'plugin:cypress/recommended',
+      'plugin:import/recommended',
+      'plugin:import/typescript',
       'plugin:react/recommended',
       'plugin:react-hooks/recommended',
       'plugin:@typescript-eslint/recommended',
@@ -47,6 +45,7 @@ export default [
   ),
   {
     plugins: {
+      cypress: cypressEslint,
       '@typescript-eslint': fixupPluginRules(typescriptEslint),
       prettier,
       'react-hooks': fixupPluginRules(reactHooks),
@@ -67,7 +66,7 @@ export default [
       sourceType: 'module',
 
       parserOptions: {
-        project: './tsconfig.eslint.json',
+        // project: './tsconfig.eslint.json',
 
         ecmaFeatures: {
           jsx: true,

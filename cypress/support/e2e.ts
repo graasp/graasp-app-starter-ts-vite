@@ -21,7 +21,6 @@ import './commands';
 // require('./commands')
 
 // ignore Resize Observer errors
-// eslint-disable-next-line consistent-return
 Cypress.on('uncaught:exception', (err) => {
   /* returning false here prevents Cypress from failing the test */
   if (/ResizeObserver/.test(err.message)) {

@@ -4,7 +4,7 @@ import { hooks, mutations } from '../../config/queryClient';
 import Loader from '../common/Loader';
 
 // mapping between Setting names and their data type
-// eslint-disable-next-line @typescript-eslint/ban-types
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 type AllSettingsType = {};
 
 // default values for the data property of settings by name
