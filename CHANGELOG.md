@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.8](https://github.com/graasp/graasp-app-starter-ts-vite/compare/v1.2.7...v1.2.8) (2026-10-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @sentry/react to v7.119.2 ([#264](https://github.com/graasp/graasp-app-starter-ts-vite/issues/264)) ([6192396](https://github.com/graasp/graasp-app-starter-ts-vite/commit/61923963f8c0558dfd1fa9d50034a5daef94e2ea))
+* **deps:** update dependency @sentry/react to v7.120.4 ([#270](https://github.com/graasp/graasp-app-starter-ts-vite/issues/270)) ([f6811dd](https://github.com/graasp/graasp-app-starter-ts-vite/commit/f6811dddbd04239fff8fed737bc07c2088c703c3))
+* **deps:** update mui (non-major) ([#265](https://github.com/graasp/graasp-app-starter-ts-vite/issues/265)) ([c2d6080](https://github.com/graasp/graasp-app-starter-ts-vite/commit/c2d6080405feeafe2b832374812c01390721502e))
+* **deps:** update mui (non-major) to v5.18.0 ([#271](https://github.com/graasp/graasp-app-starter-ts-vite/issues/271)) ([8eef0b8](https://github.com/graasp/graasp-app-starter-ts-vite/commit/8eef0b8f52a28f53b00e325b3716f6c91d8318ca))
+
 ## [1.2.7](https://github.com/graasp/graasp-app-starter-ts-vite/compare/v1.2.6...v1.2.7) (2024-09-26)
 
 
